@@ -53,7 +53,7 @@
         @endif
 
         <div class="privacidad">
-            🔒 <strong>Modo Privacidad:</strong> Los datos del paciente están protegidos. Solo visible información de surtido.
+             <strong>Modo Privacidad:</strong> Los datos del paciente están protegidos. Solo visible información de surtido.
         </div>
 
         <div class="stats">
@@ -67,7 +67,7 @@
             </div>
             <div class="stat-card stat-rojo">
                 <div class="stat-num">{{ $alertas_stock }}</div>
-                <div class="stat-label">🚨 Stock Bajo</div>
+                <div class="stat-label"> Stock Bajo</div>
             </div>
         </div>
 
@@ -115,7 +115,7 @@
                         <td><small>{{ $inv->ubicacion }}</small></td>
                         <td>
                             @if($inv->stock_actual <= $inv->stock_minimo)
-                                <span class="badge badge-rojo">🚨 BAJO</span>
+                                <span class="badge badge-rojo"> BAJO</span>
                             @else
                                 <span class="badge badge-verde">OK</span>
                             @endif

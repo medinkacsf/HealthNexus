@@ -59,7 +59,7 @@ tr:hover td{background:#fafafa}
 <div class="header">
 <div style="display:flex;align-items:center;gap:12px;">
 <a href="/nivel-a" class="back-link">← Volver</a>
-<h1>👁 Supervisión - Referencias a Médico C</h1>
+<h1> Supervisión - Referencias a Médico C</h1>
 </div>
 <div class="header-info">
 <span>{{ auth()->user()->name }}</span>
@@ -69,17 +69,17 @@ tr:hover td{background:#fafafa}
 <div class="main">
 <div class="sidebar">
 <div class="sidebar-title">Consultas</div>
-<a href="/nivel-a" class="nav-item"><span class="nav-icon">📊</span> Dashboard</a>
-<a href="/citas/agenda" class="nav-item"><span class="nav-icon">📱</span> Agenda</a>
-<a href="/expedientes" class="nav-item"><span class="nav-icon">📁</span> Expedientes</a>
-<a href="/receta/crear" class="nav-item"><span class="nav-icon">📝</span> Receta</a>
-<a href="/medicamentos" class="nav-item"><span class="nav-icon">🧪</span> Medicamentos</a>
+<a href="/nivel-a" class="nav-item"><span class="nav-icon"></span> Dashboard</a>
+<a href="/citas/agenda" class="nav-item"><span class="nav-icon"></span> Agenda</a>
+<a href="/expedientes" class="nav-item"><span class="nav-icon"></span> Expedientes</a>
+<a href="/receta/crear" class="nav-item"><span class="nav-icon"></span> Receta</a>
+<a href="/medicamentos" class="nav-item"><span class="nav-icon"></span> Medicamentos</a>
 <div class="sidebar-title">Pacientes</div>
-<a href="/nivel-a/pacientes" class="nav-item"><span class="nav-icon">💳</span> Mis Pacientes</a>
+<a href="/nivel-a/pacientes" class="nav-item"><span class="nav-icon"></span> Mis Pacientes</a>
 <a href="/nivel-a/presupuestos/crear" class="nav-item"><span class="nav-icon"></span> Nuevo Presupuesto</a>
 <a href="/nivel-a/servicios" class="nav-item"><span class="nav-icon"></span> Ver Servicios</a>
 <div class="sidebar-title">Supervisión</div>
-<a href="/nivel-a/supervision" class="nav-item active"><span class="nav-icon">👁</span> Referencias</a>
+<a href="/nivel-a/supervision" class="nav-item active"><span class="nav-icon"></span> Referencias</a>
 </div>
 <div class="content">
 @if(session('success'))
@@ -89,14 +89,14 @@ tr:hover td{background:#fafafa}
 <div class="summary">
 <div class="summary-card"><div class="summary-label">Total Enviadas</div><div class="summary-value" style="color:#2980b9;">{{ $totalEnviadas }}</div></div>
 <div class="summary-card"><div class="summary-label">⏳ Pendientes</div><div class="summary-value" style="color:#f39c12;">{{ $pendientes }}</div></div>
-<div class="summary-card"><div class="summary-label">🔄 En Proceso</div><div class="summary-value" style="color:#2980b9;">{{ $enProceso }}</div></div>
+<div class="summary-card"><div class="summary-label"> En Proceso</div><div class="summary-value" style="color:#2980b9;">{{ $enProceso }}</div></div>
 <div class="summary-card"><div class="summary-label"> Atendidas</div><div class="summary-value" style="color:#27ae60;">{{ $atendidas }}</div></div>
 <div class="summary-card"><div class="summary-label">↩ Devueltas</div><div class="summary-value" style="color:#e74c3c;">{{ $devueltas }}</div></div>
 </div>
 
 <!-- ENVIAR NUEVA REFERENCIA -->
 <div class="card">
-<div class="card-header"><h3>➕ Enviar Nueva Referencia</h3></div>
+<div class="card-header"><h3> Enviar Nueva Referencia</h3></div>
 <div class="card-body">
 <form method="POST" action="/nivel-a/supervision/enviar">
 @csrf
@@ -129,16 +129,16 @@ tr:hover td{background:#fafafa}
 @foreach($enviadas as $r)
 <div class="ref-card" style="border-left:4px solid {{ $r->estado == 'atendida' ? '#27ae60' : ($r->estado == 'devuelta' ? '#e74c3c' : ($r->estado == 'en_proceso' ? '#2980b9' : '#f39c12')) }};">
 <div class="ref-header">
-<div class="ref-paciente">🧑‍ {{ $r->paciente_nombre }}</div>
+<div class="ref-paciente">‍ {{ $r->paciente_nombre }}</div>
 <span class="tag tag-{{ $r->estado }}">{{ strtoupper(str_replace('_', ' ', $r->estado)) }}</span>
 </div>
 <div class="ref-meta">
-🚻 Enviado a: <span class="ref-destino">{{ $r->medico_destino_nombre }}</span> ·  {{ substr($r->created_at, 0, 16) }}
+ Enviado a: <span class="ref-destino">{{ $r->medico_destino_nombre }}</span> ·  {{ substr($r->created_at, 0, 16) }}
 @if($r->diagnostico_preliminar) ·  {{ $r->diagnostico_preliminar }} @endif
 </div>
 <div class="ref-motivo">{{ $r->motivo_referencia }}</div>
 @if($r->notas_destino)
-<div class="ref-notas">💬 <strong>Nota del pasante:</strong> {{ $r->notas_destino }}</div>
+<div class="ref-notas"> <strong>Nota del pasante:</strong> {{ $r->notas_destino }}</div>
 @endif
 </div>
 @endforeach

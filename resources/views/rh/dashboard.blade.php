@@ -56,35 +56,35 @@
         <h1> Recursos Humanos - HealthNexus</h1>
         <div class="header-right">
             <span>{{ auth()->user()->name }}</span>
-            <form action="/logout" method="POST" style="display:inline;">@csrf<button type="submit" class="btn btn-logout">🚪 Cerrar Sesión</button></form>
+            <form action="/logout" method="POST" style="display:inline;">@csrf<button type="submit" class="btn btn-logout"> Cerrar Sesión</button></form>
         </div>
     </div>
     <div class="main">
         <div class="sidebar">
-            <div class="sidebar-section"><div class="sidebar-title">Principal</div><a href="/rh" class="nav-item active"><span class="nav-icon">📊</span> Dashboard</a></div>
+            <div class="sidebar-section"><div class="sidebar-title">Principal</div><a href="/rh" class="nav-item active"><span class="nav-icon"></span> Dashboard</a></div>
             <div class="sidebar-section"><div class="sidebar-title">Pacientes</div>
-                <a href="/rh/cuentas-pacientes" class="nav-item"><span class="nav-icon">💳</span> Cuentas Pacientes</a>
+                <a href="/rh/cuentas-pacientes" class="nav-item"><span class="nav-icon"></span> Cuentas Pacientes</a>
                 <a href="/rh/presupuestos" class="nav-item"><span class="nav-icon"></span> Presupuestos</a>
-                <a href="/rh/pago-servicios" class="nav-item"><span class="nav-icon">💰</span> Pago de Servicios</a>
+                <a href="/rh/pago-servicios" class="nav-item"><span class="nav-icon"></span> Pago de Servicios</a>
                 <a href="/rh/corte-caja" class="nav-item"><span class="nav-icon"> Macy</span> Corte de Caja</a>
-                <a href="/rh/depositos" class="nav-item"><span class="nav-icon">🔒</span> Liberar Depósitos</a>
+                <a href="/rh/depositos" class="nav-item"><span class="nav-icon"></span> Liberar Depósitos</a>
             </div>
-            <div class="sidebar-section"><div class="sidebar-title">Operaciones</div><a href="/rh/solicitudes" class="nav-item"><span class="nav-icon">📨</span> Solicitudes</a><a href="/rh/anomalias" class="nav-item"><span class="nav-icon">🚨</span> Anomalías IA</a></div>
-            <div class="sidebar-section"><div class="sidebar-title">Sistema</div><a href="/auditoria" class="nav-item"><span class="nav-icon">🔐</span> Auditoría</a></div>
+            <div class="sidebar-section"><div class="sidebar-title">Operaciones</div><a href="/rh/solicitudes" class="nav-item"><span class="nav-icon"></span> Solicitudes</a><a href="/rh/anomalias" class="nav-item"><span class="nav-icon"></span> Anomalías IA</a></div>
+            <div class="sidebar-section"><div class="sidebar-title">Sistema</div><a href="/auditoria" class="nav-item"><span class="nav-icon"></span> Auditoría</a></div>
         </div>
         <div class="content">
             @if(session('success'))<div class="alert alert-success">{{ session('success') }}</div>@endif
 
             <div class="stats-grid">
-                <div class="stat-card blue"><div class="stat-label">💳 Cuentas Abiertas</div><div class="stat-value blue">{{ $cuentasAbiertas }}</div></div>
-                <div class="stat-card red"><div class="stat-label">⚠ Cuentas Vencidas</div><div class="stat-value red">{{ $cuentasVencidas }}</div></div>
-                <div class="stat-card green"><div class="stat-label">💰 Cobrado Hoy</div><div class="stat-value green">${{ number_format($pagosHoy, 2) }}</div></div>
-                <div class="stat-card orange"><div class="stat-label">🔒 Depósitos Pendientes</div><div class="stat-value orange">{{ $depositosPendientes }}</div></div>
+                <div class="stat-card blue"><div class="stat-label"> Cuentas Abiertas</div><div class="stat-value blue">{{ $cuentasAbiertas }}</div></div>
+                <div class="stat-card red"><div class="stat-label"> Cuentas Vencidas</div><div class="stat-value red">{{ $cuentasVencidas }}</div></div>
+                <div class="stat-card green"><div class="stat-label"> Cobrado Hoy</div><div class="stat-value green">${{ number_format($pagosHoy, 2) }}</div></div>
+                <div class="stat-card orange"><div class="stat-label"> Depósitos Pendientes</div><div class="stat-value orange">{{ $depositosPendientes }}</div></div>
             </div>
 
             <div class="module-grid">
                 <a href="/rh/cuentas-pacientes" class="module-card">
-                    <div class="module-icon">💳</div>
+                    <div class="module-icon"></div>
                     <div class="module-title">Cuentas de Pacientes</div>
                     <div class="module-desc">Ver cuentas, saldos y pagos</div>
                     <div class="module-stat">${{ number_format($saldoPorCobrar, 2) }} por cobrar</div>
@@ -96,7 +96,7 @@
                     <div class="module-stat">{{ $presupuestosPendientes }} pendientes</div>
                 </a>
                 <a href="/rh/pago-servicios" class="module-card">
-                    <div class="module-icon">💰</div>
+                    <div class="module-icon"></div>
                     <div class="module-title">Pago de Servicios</div>
                     <div class="module-desc">Registrar pagos de pacientes</div>
                     <div class="module-stat">{{ $pagosCount }} pagos hoy</div>
@@ -108,13 +108,13 @@
                     <div class="module-stat">{{ $corteHoy ? ' Cerrado' : '⏳ Pendiente' }}</div>
                 </a>
                 <a href="/rh/depositos" class="module-card">
-                    <div class="module-icon">🔒</div>
+                    <div class="module-icon"></div>
                     <div class="module-title">Liberar Depósitos</div>
                     <div class="module-desc">Depósitos de garantía</div>
                     <div class="module-stat">${{ number_format($montoDepositos, 2) }} por liberar</div>
                 </a>
                 <a href="/rh/anomalias" class="module-card">
-                    <div class="module-icon">🚨</div>
+                    <div class="module-icon"></div>
                     <div class="module-title">Anomalías IA</div>
                     <div class="module-desc">Detección automática</div>
                     <div class="module-stat">Análisis inteligente</div>
@@ -123,7 +123,7 @@
 
             <div class="grid-2">
                 <div class="card">
-                    <div class="card-header"><h3>💰 Últimos Pagos</h3><a href="/rh/pago-servicios" class="btn-sm">Ver todos</a></div>
+                    <div class="card-header"><h3> Últimos Pagos</h3><a href="/rh/pago-servicios" class="btn-sm">Ver todos</a></div>
                     <table>
                         <tr><th>Hora</th><th>Paciente</th><th>Método</th><th>Monto</th></tr>
                         @if(count($ultimosPagos) > 0)

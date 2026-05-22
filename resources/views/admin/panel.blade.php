@@ -41,10 +41,10 @@
 <body>
 
     <div class="header">
-        <h2>🛡 Panel de Super Administración</h2>
+        <h2> Panel de Super Administración</h2>
         <div class="header-buttons">
             <a href="/dashboard" class="btn btn-blue">← Dashboard</a>
-            <a href="/auditoria" class="btn btn-dark">🔒 Auditoría</a>
+            <a href="/auditoria" class="btn btn-dark"> Auditoría</a>
             <a href="/farmacia" class="btn" style="background:#27ae60;"> Farmacia</a>
         </div>
     </div>
@@ -56,7 +56,7 @@
     <div class="grid">
         <!-- TABLA DE USUARIOS -->
         <div class="card">
-            <h3>👥 Personal Registrado ({{ $users->count() }})</h3>
+            <h3> Personal Registrado ({{ $users->count() }})</h3>
             <table>
                 <tr>
                     <th>ID</th>
@@ -81,7 +81,7 @@
 
         <!-- FORMULARIO PARA CREAR -->
         <div class="card">
-            <h3>➕ Agregar Personal</h3>
+            <h3> Agregar Personal</h3>
             <form action="/admin/create-user" method="POST">
                 @csrf
                 <input type="text" name="name" placeholder="Nombre completo" required>
@@ -103,7 +103,7 @@
     <!-- TARJETA DE AUDITORÍA -->
     <a href="/auditoria" class="auditoria-card">
         <div>
-            <div class="auditoria-title">🔒 Auditoría Inmutable</div>
+            <div class="auditoria-title"> Auditoría Inmutable</div>
             <div class="auditoria-subtitle">Registro completo de logins, navegación e intentos fallidos. Datos protegidos contra eliminación.</div>
         </div>
         <div class="auditoria-icon"></div>

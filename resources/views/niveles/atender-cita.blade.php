@@ -129,7 +129,7 @@
             <textarea name="notas_medicas" class="form-control" placeholder="Observaciones privadas..."></textarea>
         </div>
 
-        <button type="submit" class="btn-submit">💾 Guardar Consulta y Finalizar</button>
+        <button type="submit" class="btn-submit"> Guardar Consulta y Finalizar</button>
     </form>
 </div>
 

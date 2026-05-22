@@ -65,7 +65,7 @@
 </head>
 <body>
     <div class="header">
-        <h1>👥 Recursos Humanos - HealthNexus</h1>
+        <h1> Recursos Humanos - HealthNexus</h1>
         <div class="header-info">
             <span class="badge">{{ $user->name }}</span>
             <form action="/logout" method="POST" style="display:inline;">@csrf<button type="submit" class="btn btn-outline">Salir</button></form>
@@ -75,13 +75,13 @@
     <div class="main">
         <div class="sidebar">
             <h3>Menú RRHH</h3>
-            <a href="/rh" class="nav-item active"><span>📊</span> Dashboard</a>
+            <a href="/rh" class="nav-item active"><span></span> Dashboard</a>
             <a href="/rh/solicitudes" class="nav-item"><span></span> Solicitudes ({{ $pendientes }})</a>
-            <a href="/rh/anomalias" class="nav-item"><span>🚨</span> Anomalías ({{ $anomalias }})</a>
-            <a href="/auditoria" class="nav-item"><span>🔒</span> Auditoría</a>
+            <a href="/rh/anomalias" class="nav-item"><span></span> Anomalías ({{ $anomalias }})</a>
+            <a href="/auditoria" class="nav-item"><span></span> Auditoría</a>
 
             <div style="margin-top:24px;padding:14px;background:var(--blue-50);border-radius:var(--radius-md);border:1px solid var(--blue-100);">
-                <div style="font-size:11px;color:var(--blue-600);font-weight:600;margin-bottom:8px;">💰 COSTO PENDIENTE</div>
+                <div style="font-size:11px;color:var(--blue-600);font-weight:600;margin-bottom:8px;"> COSTO PENDIENTE</div>
                 <div style="font-size:20px;font-weight:700;color:var(--blue-400);">${{ number_format($costo_pendiente, 2) }}</div>
             </div>
 
@@ -91,7 +91,7 @@
             </div>
 
             <div style="margin-top:12px;padding:14px;background:var(--red-50);border-radius:var(--radius-md);border:1px solid var(--red-100);">
-                <div style="font-size:11px;color:var(--red-600);font-weight:600;margin-bottom:8px;">⚠ ANOMALÍAS</div>
+                <div style="font-size:11px;color:var(--red-600);font-weight:600;margin-bottom:8px;"> ANOMALÍAS</div>
                 <div style="font-size:20px;font-weight:700;color:var(--red-400);">{{ $anomalias }}</div>
             </div>
         </div>
@@ -112,14 +112,14 @@
                 </div>
                 <div class="stat stat-orange">
                     <div class="stat-num">{{ $solicitudes_hoy }}</div>
-                    <div class="stat-label">📊 Solicitudes Hoy</div>
+                    <div class="stat-label"> Solicitudes Hoy</div>
                 </div>
             </div>
 
             <!-- MOVIMIENTOS RECIENTES -->
             <div class="card">
                 <div class="card-head">
-                    <h3>📝 Movimientos Recientes</h3>
+                    <h3> Movimientos Recientes</h3>
                     <a href="/rh/solicitudes" class="btn btn-blue btn-sm">Ver todas</a>
                 </div>
                 <div class="card-body">

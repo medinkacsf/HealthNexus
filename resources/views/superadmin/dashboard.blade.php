@@ -56,7 +56,7 @@ k<!DOCTYPE html>
 </head>
 <body>
     <div class="header">
-        <h1>🛡 SuperAdmin - HealthNexus</h1>
+        <h1> SuperAdmin - HealthNexus</h1>
         <div style="display:flex;gap:8px;align-items:center;">
             <span style="font-size:12px;opacity:0.7;">{{ $user->name }}</span>
             <form action="/logout" method="POST" style="display:inline;">@csrf<button type="submit" class="btn btn-red">Salir</button></form>
@@ -66,13 +66,13 @@ k<!DOCTYPE html>
     <div class="main">
         <div class="sidebar">
             <h3> Menú</h3>
-            <a href="/superadmin" class="nav-item active">📊 Dashboard</a>
-            <a href="/admin" class="nav-item" target="_blank">👥 Administración</a>
-            <a href="/auditoria" class="nav-item" target="_blank">🔒 Auditoría</a>
-            <a href="/expedientes" class="nav-item" target="_blank">📁 Expedientes</a>
+            <a href="/superadmin" class="nav-item active"> Dashboard</a>
+            <a href="/admin" class="nav-item" target="_blank"> Administración</a>
+            <a href="/auditoria" class="nav-item" target="_blank"> Auditoría</a>
+            <a href="/expedientes" class="nav-item" target="_blank"> Expedientes</a>
             <a href="/farmacia" class="nav-item" target="_blank"> Farmacia</a>
             <a href="/dashboard" class="nav-item" target="_blank"> Monitor IA</a>
-            <a href="#chat" class="nav-item">🤖 Chat Ejecutivo</a>
+            <a href="#chat" class="nav-item"> Chat Ejecutivo</a>
         </div>
 
         <div class="content">
@@ -99,10 +99,10 @@ k<!DOCTYPE html>
                 </div>
 
                 <div class="card">
-                    <h3>🚨 Alertas Inteligentes IA</h3>
-                    <div class="alerta alerta-roja">🚨 <strong>Anomalía Crítica</strong> - Traumatología: Consumo 340% sobre promedio</div>
-                    <div class="alerta alerta-amarillo">⚠ <strong>Stock Bajo</strong> - Morfina 10mg: 8 unidades (mín: 5)</div>
-                    <div class="alerta alerta-amarillo">⚠ <strong>Stock Bajo</strong> - Amoxicilina 500mg: 3 unidades (mín: 15)</div>
+                    <h3> Alertas Inteligentes IA</h3>
+                    <div class="alerta alerta-roja"> <strong>Anomalía Crítica</strong> - Traumatología: Consumo 340% sobre promedio</div>
+                    <div class="alerta alerta-amarillo"> <strong>Stock Bajo</strong> - Morfina 10mg: 8 unidades (mín: 5)</div>
+                    <div class="alerta alerta-amarillo"> <strong>Stock Bajo</strong> - Amoxicilina 500mg: 3 unidades (mín: 15)</div>
                     <div class="alerta alerta-verde"> <strong>Estable</strong> - Cardiología y Neumología operando normal</div>
                 </div>
             </div>
@@ -114,36 +114,36 @@ k<!DOCTYPE html>
                     <div class="barra"><div class="barra-fill" style="width:80%;background:#27ae60;"></div></div>
                     <div class="barra-label"><span>Paracetamol 500mg</span><span style="color:#27ae60;">Stock OK (25 días)</span></div>
                     <div class="barra"><div class="barra-fill" style="width:95%;background:#27ae60;"></div></div>
-                    <div class="barra-label"><span>Morfina 10mg</span><span style="color:#e74c3c;">⚠ 2 días</span></div>
+                    <div class="barra-label"><span>Morfina 10mg</span><span style="color:#e74c3c;"> 2 días</span></div>
                     <div class="barra"><div class="barra-fill" style="width:15%;background:#e74c3c;"></div></div>
-                    <div class="barra-label"><span>Amoxicilina 500mg</span><span style="color:#e74c3c;">🚨 0.5 días</span></div>
+                    <div class="barra-label"><span>Amoxicilina 500mg</span><span style="color:#e74c3c;"> 0.5 días</span></div>
                     <div class="barra"><div class="barra-fill" style="width:5%;background:#e74c3c;"></div></div>
                 </div>
 
                 <div class="card">
-                    <h3>📊 Resumen Semanal IA</h3>
+                    <h3> Resumen Semanal IA</h3>
                     <div style="font-size:13px;line-height:1.8;">
-                        <p>📈 <strong>Consultas:</strong> +8% vs semana pasada (312 total)</p>
-                        <p>💰 <strong>Ingresos estimados:</strong> $8,450,000 MXN</p>
+                        <p> <strong>Consultas:</strong> +8% vs semana pasada (312 total)</p>
+                        <p> <strong>Ingresos estimados:</strong> $8,450,000 MXN</p>
                         <p> <strong>Ocupación:</strong> 62% (75/120 camas)</p>
-                        <p>🚨 <strong>Anomalías detectadas:</strong> 3 esta semana</p>
+                        <p> <strong>Anomalías detectadas:</strong> 3 esta semana</p>
                         <p> <strong>Quiebres evitados:</strong> 2 (IA predijo correctamente)</p>
-                        <p>⚡ <strong>Tiempo promedio estancia:</strong> 3.2 días (-0.3 vs anterior)</p>
+                        <p> <strong>Tiempo promedio estancia:</strong> 3.2 días (-0.3 vs anterior)</p>
                     </div>
                 </div>
             </div>
 
             <div class="card">
-                <h3>🤖 Asistente Ejecutivo IA</h3>
+                <h3> Asistente Ejecutivo IA</h3>
                 <div class="quick-btns">
-                    <button class="quick-btn" onclick="enviar('Resumen del hospital')">📊 Resumen</button>
-                    <button class="quick-btn" onclick="enviar('Pacientes atendidos')">👥 Pacientes</button>
+                    <button class="quick-btn" onclick="enviar('Resumen del hospital')"> Resumen</button>
+                    <button class="quick-btn" onclick="enviar('Pacientes atendidos')"> Pacientes</button>
                     <button class="quick-btn" onclick="enviar('Ingresos y egresos')"> Ingresos</button>
-                    <button class="quick-btn" onclick="enviar('Anomalías detectadas')">🚨 Anomalías</button>
+                    <button class="quick-btn" onclick="enviar('Anomalías detectadas')"> Anomalías</button>
                     <button class="quick-btn" onclick="enviar('Predicción de inventario')"> Inventario</button>
-                    <button class="quick-btn" onclick="enviar('Finanzas del día')">💰 Finanzas</button>
-                    <button class="quick-btn" onclick="enviar('Estado del personal')">👨‍ Personal</button>
-                    <button class="quick-btn" onclick="enviar('Generar reporte diario')">📄 Reporte</button>
+                    <button class="quick-btn" onclick="enviar('Finanzas del día')"> Finanzas</button>
+                    <button class="quick-btn" onclick="enviar('Estado del personal')">‍ Personal</button>
+                    <button class="quick-btn" onclick="enviar('Generar reporte diario')"> Reporte</button>
                 </div>
                 <div class="chat-container">
                     <div class="chat-messages" id="chatMessages">
@@ -156,7 +156,7 @@ k<!DOCTYPE html>
                     </div>
                     <div class="chat-input">
                         <input type="text" id="chatInput" placeholder="Pregunta ejecutiva..." onkeypress="if(event.key==='Enter')enviarMsg()">
-                        <button onclick="enviarMsg()">➤</button>
+                        <button onclick="enviarMsg()"></button>
                     </div>
                 </div>
             </div>
@@ -195,7 +195,7 @@ k<!DOCTYPE html>
             const cm = document.getElementById('chatMessages');
             const d = document.createElement('div');
             d.className = `msg msg-${tipo}`;
-            d.innerHTML = `<div><div class="msg-bubble">${texto}</div>${fuente ? `<div class="msg-fuente">📊 ${fuente}</div>` : ''}</div>`;
+            d.innerHTML = `<div><div class="msg-bubble">${texto}</div>${fuente ? `<div class="msg-fuente"> ${fuente}</div>` : ''}</div>`;
             cm.appendChild(d);
             cm.scrollTop = cm.scrollHeight;
         }

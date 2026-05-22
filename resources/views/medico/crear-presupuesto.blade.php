@@ -53,13 +53,13 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;height:100vh;dis
 <div class="main">
 <div class="sidebar">
 <div class="sidebar-title">Consultas</div>
-<a href="/nivel-a" class="nav-item"><span class="nav-icon">📊</span> Dashboard</a>
-<a href="/citas/agenda" class="nav-item"><span class="nav-icon">📱</span> Agenda</a>
-<a href="/expedientes" class="nav-item"><span class="nav-icon">📁</span> Expedientes</a>
-<a href="/receta/crear" class="nav-item"><span class="nav-icon">📝</span> Receta</a>
-<a href="/medicamentos" class="nav-item"><span class="nav-icon">🧪</span> Medicamentos</a>
+<a href="/nivel-a" class="nav-item"><span class="nav-icon"></span> Dashboard</a>
+<a href="/citas/agenda" class="nav-item"><span class="nav-icon"></span> Agenda</a>
+<a href="/expedientes" class="nav-item"><span class="nav-icon"></span> Expedientes</a>
+<a href="/receta/crear" class="nav-item"><span class="nav-icon"></span> Receta</a>
+<a href="/medicamentos" class="nav-item"><span class="nav-icon"></span> Medicamentos</a>
 <div class="sidebar-title">Pacientes</div>
-<a href="/nivel-a/pacientes" class="nav-item"><span class="nav-icon">💳</span> Mis Pacientes</a>
+<a href="/nivel-a/pacientes" class="nav-item"><span class="nav-icon"></span> Mis Pacientes</a>
 <a href="/nivel-a/presupuestos/crear" class="nav-item active"><span class="nav-icon"></span> Nuevo Presupuesto</a>
 <a href="/nivel-a/servicios" class="nav-item"><span class="nav-icon"></span> Ver Servicios</a>
 </div>
@@ -70,7 +70,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;height:100vh;dis
 <form method="POST" action="/nivel-a/presupuestos/guardar" id="presupuestoForm">
 @csrf
 <div class="card">
-<div class="card-header"><h3>👤 Datos del Paciente</h3></div>
+<div class="card-header"><h3> Datos del Paciente</h3></div>
 <div class="card-body">
 <div class="form-grid">
 <div class="form-group"><label>Nombre del Paciente *</label><input type="text" name="paciente_nombre" required placeholder="Nombre completo"></div>
@@ -106,14 +106,14 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;height:100vh;dis
 <button type="button" class="remove-btn" onclick="removeRow(0)" style="visibility:hidden;">×</button>
 </div>
 </div>
-<button type="button" class="add-btn" onclick="addRow()">➕ Agregar Servicio</button>
+<button type="button" class="add-btn" onclick="addRow()"> Agregar Servicio</button>
 <div class="totals">
 <div class="totals-row"><span>Subtotal:</span><span id="subtotal">$0.00</span></div>
 <div class="totals-row" style="color:#e74c3c;"><span>Descuento:</span><span id="descuento">-$0.00</span></div>
 <div class="totals-row total"><span>TOTAL:</span><span id="total">$0.00</span></div>
 </div>
 <div class="actions">
-<button type="submit" class="btn btn-green" style="padding:10px 24px;font-size:13px;">💾 Guardar</button>
+<button type="submit" class="btn btn-green" style="padding:10px 24px;font-size:13px;"> Guardar</button>
 <a href="/nivel-a" class="btn btn-red" style="padding:10px 24px;font-size:13px;">Cancelar</a>
 </div>
 </div>

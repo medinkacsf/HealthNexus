@@ -71,7 +71,7 @@
     <div class="header">
         <h1> HealthNexus - Médico Jefe</h1>
         <div class="header-info">
-            <span class="badge-jefe">👨‍ {{ $user->name }}</span>
+            <span class="badge-jefe">‍ {{ $user->name }}</span>
             <span class="badge-rol">Nivel A</span>
             <form action="/logout" method="POST" style="display:inline;">
                 @csrf
@@ -84,25 +84,25 @@
         <div class="sidebar">
             <div class="sidebar-section">
                 <div class="sidebar-title">Consultas</div>
-                <a href="/nivel-a" class="nav-item active"><span class="nav-icon">📊</span> Dashboard</a>
-                <a href="/citas/agenda" class="nav-item"><span class="nav-icon">📱</span> Agenda</a>
-                <a href="/expedientes" class="nav-item"><span class="nav-icon">📁</span> Expedientes</a>
-                <a href="/expediente/crear" class="nav-item"><span class="nav-icon">➕</span> Nuevo Paciente</a>
-                <a href="/receta/crear" class="nav-item"><span class="nav-icon">📝</span> Nueva Receta</a>
-                <a href="/medicamentos" class="nav-item"><span class="nav-icon">🧪</span> Medicamentos</a>
+                <a href="/nivel-a" class="nav-item active"><span class="nav-icon"></span> Dashboard</a>
+                <a href="/citas/agenda" class="nav-item"><span class="nav-icon"></span> Agenda</a>
+                <a href="/expedientes" class="nav-item"><span class="nav-icon"></span> Expedientes</a>
+                <a href="/expediente/crear" class="nav-item"><span class="nav-icon"></span> Nuevo Paciente</a>
+                <a href="/receta/crear" class="nav-item"><span class="nav-icon"></span> Nueva Receta</a>
+                <a href="/medicamentos" class="nav-item"><span class="nav-icon"></span> Medicamentos</a>
             </div>
 
             <div class="sidebar-section">
                 <div class="sidebar-title">Pacientes</div>
-                <a href="/nivel-a/pacientes" class="nav-item"><span class="nav-icon">💳</span> Mis Pacientes</a>
+                <a href="/nivel-a/pacientes" class="nav-item"><span class="nav-icon"></span> Mis Pacientes</a>
                 <a href="/nivel-a/presupuestos/crear" class="nav-item"><span class="nav-icon"></span> Nuevo Presupuesto</a>
                 <a href="/nivel-a/servicios" class="nav-item"><span class="nav-icon"></span> Ver Servicios</a>
             </div>
 
             <div class="sidebar-section">
                 <div class="sidebar-title">Sistema</div>
-                <a href="/nivel-a/supervision" class="nav-item"><span class="nav-icon">👁</span> Supervisión</a>
-            <a href="#chat" class="nav-item"><span class="nav-icon">🤖</span> Chat IA</a>
+                <a href="/nivel-a/supervision" class="nav-item"><span class="nav-icon"></span> Supervisión</a>
+            <a href="#chat" class="nav-item"><span class="nav-icon"></span> Chat IA</a>
             </div>
         </div>
 
@@ -115,7 +115,7 @@
             <div class="grid">
                 <div class="card">
                     <div class="card-header">
-                        <h3>📱 Citas WhatsApp</h3>
+                        <h3> Citas WhatsApp</h3>
                         <span class="card-badge">{{ $citas_pendientes }} pendientes</span>
                     </div>
                     <div class="card-body">
@@ -170,7 +170,7 @@
             @if($pendientes > 0)
             <div class="card" style="border-left: 4px solid #e74c3c;">
                 <div class="card-header" style="background:#fdedec;">
-                    <h3 style="✍ Notas por Firmar</h3>
+                    <h3 style=" Notas por Firmar</h3>
                     <span class="card-badge">{{ $pendientes }} pendientes</span>
                 </div>
                 <div class="card-body" style="padding:16px;">
@@ -180,13 +180,13 @@
 
             <!-- CHATBOT IA -->
             <div class="section" id="chat">
-                <h2>🤖 Asistente IA</h2>
-                <a href="https://wa.me/527208321873?text=Hola%2C%20deseo%20agendar%20una%20cita" target="_blank" class="btn-whatsapp">📱 Agendar Cita por WhatsApp</a>
+                <h2> Asistente IA</h2>
+                <a href="https://wa.me/527208321873?text=Hola%2C%20deseo%20agendar%20una%20cita" target="_blank" class="btn-whatsapp"> Agendar Cita por WhatsApp</a>
                 <div class="quick-btns" style="margin-top:12px;">
                     <button class="quick-btn" onclick="enviarRapido('Cuadro basico')"> Cuadro Básico</button>
                     <button class="quick-btn" onclick="enviarRapido('Protocolo cefalea')"> Cefalea</button>
                     <button class="quick-btn" onclick="enviarRapido('Dolor abdominal')"> Dolor Abdominal</button>
-                    <button class="quick-btn" onclick="enviarRapido('Agendar cita')">📱 Agendar Cita</button>
+                    <button class="quick-btn" onclick="enviarRapido('Agendar cita')"> Agendar Cita</button>
                 </div>
                 <div class="chat-container">
                     <div class="chat-messages" id="chatMessages">
@@ -199,7 +199,7 @@
                     </div>
                     <div class="chat-input">
                         <input type="text" id="chatInput" placeholder="Escribe tu consulta..." onkeypress="if(event.key==='Enter')enviarMensaje()">
-                        <button onclick="enviarMensaje()">➤</button>
+                        <button onclick="enviarMensaje()"></button>
                     </div>
                 </div>
             </div>
@@ -214,7 +214,7 @@
             agregarMensaje(texto, 'user');
             input.value = '';
             const cm = document.getElementById('chatMessages');
-            cm.innerHTML += '<div class="typing" id="typing">🤔 Pensando...</div>';
+            cm.innerHTML += '<div class="typing" id="typing"> Pensando...</div>';
             cm.scrollTop = cm.scrollHeight;
             try {
                 const res = await fetch('http://127.0.0.1:8000/chatbot-mejorado', {
@@ -237,9 +237,9 @@
             d.className = `msg msg-${tipo}`;
             let html = '<div class="msg-bubble">' + texto + '</div>';
             if (texto.includes('wa.me') || texto.includes('whatsapp')) {
-                html += '<a href="https://wa.me/527208321873?text=Hola%2C%20deseo%20agendar%20una%20cita" target="_blank" class="btn-whatsapp">📱 Agendar por WhatsApp</a>';
+                html += '<a href="https://wa.me/527208321873?text=Hola%2C%20deseo%20agendar%20una%20cita" target="_blank" class="btn-whatsapp"> Agendar por WhatsApp</a>';
             }
-            html += fuente ? '<div class="msg-fuente">📊 ' + fuente + '</div>' : '';
+            html += fuente ? '<div class="msg-fuente"> ' + fuente + '</div>' : '';
             d.innerHTML = '<div>' + html + '</div>';
             cm.appendChild(d);
             cm.scrollTop = cm.scrollHeight;

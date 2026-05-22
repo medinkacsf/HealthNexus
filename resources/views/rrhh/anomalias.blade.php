@@ -47,7 +47,7 @@
 </head>
 <body>
     <div class="header">
-        <h1>🚨 Anomalías Detectadas por IA</h1>
+        <h1> Anomalías Detectadas por IA</h1>
         <div class="header-info">
             <span>{{ auth()->user()->name }}</span>
             <a href="/rh" class="btn btn-outline">← Dashboard</a>
@@ -57,10 +57,10 @@
     <div class="main">
         <div class="sidebar">
             <h3>Menú RRHH</h3>
-            <a href="/rh" class="nav-item"><span>📊</span> Dashboard</a>
+            <a href="/rh" class="nav-item"><span></span> Dashboard</a>
             <a href="/rh/solicitudes" class="nav-item"><span></span> Solicitudes</a>
-            <a href="/rh/anomalias" class="nav-item active"><span>🚨</span> Anomalías</a>
-            <a href="/auditoria" class="nav-item"><span>🔒</span> Auditoría</a>
+            <a href="/rh/anomalias" class="nav-item active"><span></span> Anomalías</a>
+            <a href="/auditoria" class="nav-item"><span></span> Auditoría</a>
         </div>
 
         <div class="content">
@@ -71,8 +71,8 @@
             @if(count($anomalias) > 0)
             <div class="card">
                 <div class="card-head">
-                    <h3>🚨 {{ count($anomalias) }} anomalías pendientes de revisión</h3>
-                <form action="/rh/detectar-anomalias" method="POST" style="display:inline;">@csrf<button type="submit" class="btn btn-red btn-sm">🔄 Re-analizar</button></form>
+                    <h3> {{ count($anomalias) }} anomalías pendientes de revisión</h3>
+                <form action="/rh/detectar-anomalias" method="POST" style="display:inline;">@csrf<button type="submit" class="btn btn-red btn-sm"> Re-analizar</button></form>
             </div>
             <div class="card-body">
                 @foreach($anomalias as $a)

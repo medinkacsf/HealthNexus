@@ -21,7 +21,7 @@
 </head>
 <body>
     <div class="header">
-        <h1>👑 Panel de Administración</h1>
+        <h1> Panel de Administración</h1>
         <a href="{{ route('dashboard') }}" class="btn btn-logout">Volver al Dashboard</a>
     </div>
 

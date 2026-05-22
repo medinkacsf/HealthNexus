@@ -39,24 +39,24 @@
 </head>
 <body>
     <div class="header">
-        <h1>🚨 Anomalías Detectadas por IA</h1>
-        <div class="header-right"><span>{{ auth()->user()->name }}</span><form action="/logout" method="POST" style="display:inline;">@csrf<button type="submit" class="btn btn-logout">🚪 Salir</button></form></div>
+        <h1> Anomalías Detectadas por IA</h1>
+        <div class="header-right"><span>{{ auth()->user()->name }}</span><form action="/logout" method="POST" style="display:inline;">@csrf<button type="submit" class="btn btn-logout"> Salir</button></form></div>
     </div>
     <div class="main">
         <div class="sidebar">
-            <div class="sidebar-section"><div class="sidebar-title">Principal</div><a href="/rh" class="nav-item"><span class="nav-icon">📊</span> Dashboard</a></div>
-            <div class="sidebar-section"><div class="sidebar-title">Pacientes</div><a href="/rh/cuentas-pacientes" class="nav-item"><span class="nav-icon">💳</span> Cuentas Pacientes</a><a href="/rh/presupuestos" class="nav-item"><span class="nav-icon"></span> Presupuestos</a><a href="/rh/pago-servicios" class="nav-item"><span class="nav-icon">💰</span> Pago de Servicios</a><a href="/rh/corte-caja" class="nav-item"><span class="nav-icon"> Macy</span> Corte de Caja</a><a href="/rh/depositos" class="nav-item"><span class="nav-icon">🔒</span> Liberar Depósitos</a></div>
-            <div class="sidebar-section"><div class="sidebar-title">Operaciones</div><a href="/rh/solicitudes" class="nav-item"><span class="nav-icon">📨</span> Solicitudes</a><a href="/rh/anomalias" class="nav-item active"><span class="nav-icon">🚨</span> Anomalías IA</a></div>
-            <div class="sidebar-section"><div class="sidebar-title">Sistema</div><a href="/auditoria" class="nav-item"><span class="nav-icon">🔐</span> Auditoría</a></div>
+            <div class="sidebar-section"><div class="sidebar-title">Principal</div><a href="/rh" class="nav-item"><span class="nav-icon"></span> Dashboard</a></div>
+            <div class="sidebar-section"><div class="sidebar-title">Pacientes</div><a href="/rh/cuentas-pacientes" class="nav-item"><span class="nav-icon"></span> Cuentas Pacientes</a><a href="/rh/presupuestos" class="nav-item"><span class="nav-icon"></span> Presupuestos</a><a href="/rh/pago-servicios" class="nav-item"><span class="nav-icon"></span> Pago de Servicios</a><a href="/rh/corte-caja" class="nav-item"><span class="nav-icon"> Macy</span> Corte de Caja</a><a href="/rh/depositos" class="nav-item"><span class="nav-icon"></span> Liberar Depósitos</a></div>
+            <div class="sidebar-section"><div class="sidebar-title">Operaciones</div><a href="/rh/solicitudes" class="nav-item"><span class="nav-icon"></span> Solicitudes</a><a href="/rh/anomalias" class="nav-item active"><span class="nav-icon"></span> Anomalías IA</a></div>
+            <div class="sidebar-section"><div class="sidebar-title">Sistema</div><a href="/auditoria" class="nav-item"><span class="nav-icon"></span> Auditoría</a></div>
         </div>
         <div class="content">
             @if(session('success'))<div class="alert alert-success">{{ session('success') }}</div>@endif
-            <form action="/rh/detectar-anomalias" method="POST" style="display:inline;">@csrf<button type="submit" class="btn scan-btn">🔄 Ejecutar Análisis IA</button></form>
+            <form action="/rh/detectar-anomalias" method="POST" style="display:inline;">@csrf<button type="submit" class="btn scan-btn"> Ejecutar Análisis IA</button></form>
             @if(count($anomalias) > 0)
             <div style="font-size:13px;color:var(--neutral-600);margin-bottom:12px;"><strong>{{ count($anomalias) }}</strong> anomalías pendientes</div>
             @foreach($anomalias as $a)
             <div class="anomalia-card">
-                <div class="anomalia-header"><span class="anomalia-tipo">⚠ {{ $a->anomalia_tipo ?? 'No especificada' }}</span><span class="tag tag-{{ $a->estado }}">{{ ucfirst($a->estado) }}</span></div>
+                <div class="anomalia-header"><span class="anomalia-tipo"> {{ $a->anomalia_tipo ?? 'No especificada' }}</span><span class="tag tag-{{ $a->estado }}">{{ ucfirst($a->estado) }}</span></div>
                 <div class="anomalia-desc"><strong>{{ $a->descripcion }}</strong></div>
                 <div class="anomalia-detail">{{ $a->anomalia_detalle ?? 'Sin detalle' }}</div>
                 <div class="anomalia-meta"><strong>Solicitante:</strong> {{ $a->solicitante_nombre }} | <strong>Costo:</strong> ${{ number_format($a->costo_solicitado, 2) }} | <strong>ID:</strong> #{{ $a->id }}</div>

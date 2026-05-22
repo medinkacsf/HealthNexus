@@ -64,18 +64,18 @@
 </head>
 <body>
     <div class="header">
-        <h1>🏦 Cuentas Financieras</h1>
+        <h1> Cuentas Financieras</h1>
         <div class="header-right">
             <span>{{ auth()->user()->name }}</span>
-            <form action="/logout" method="POST" style="display:inline;">@csrf<button type="submit" class="btn btn-logout">🚪 Salir</button></form>
+            <form action="/logout" method="POST" style="display:inline;">@csrf<button type="submit" class="btn btn-logout"> Salir</button></form>
         </div>
     </div>
     <div class="main">
         <div class="sidebar">
-            <div class="sidebar-section"><div class="sidebar-title">Principal</div><a href="/rh" class="nav-item"><span class="nav-icon">📊</span> Dashboard</a></div>
-            <div class="sidebar-section"><div class="sidebar-title">Finanzas</div><a href="/rh/cuentas" class="nav-item active"><span class="nav-icon">🏦</span> Cuentas</a><a href="/rh/servicios" class="nav-item"><span class="nav-icon"></span> Servicios</a><a href="/rh/movimientos" class="nav-item"><span class="nav-icon"></span> Movimientos</a><a href="/rh/ajustes" class="nav-item"><span class="nav-icon">⚙</span> Ajustes</a><a href="/rh/reportes" class="nav-item"><span class="nav-icon">📈</span> Reportes</a></div>
-            <div class="sidebar-section"><div class="sidebar-title">Operaciones</div><a href="/rh/solicitudes" class="nav-item"><span class="nav-icon">📨</span> Solicitudes</a><a href="/rh/anomalias" class="nav-item"><span class="nav-icon">🚨</span> Anomalías IA</a></div>
-            <div class="sidebar-section"><div class="sidebar-title">Sistema</div><a href="/auditoria" class="nav-item"><span class="nav-icon">🔒</span> Auditoría</a></div>
+            <div class="sidebar-section"><div class="sidebar-title">Principal</div><a href="/rh" class="nav-item"><span class="nav-icon"></span> Dashboard</a></div>
+            <div class="sidebar-section"><div class="sidebar-title">Finanzas</div><a href="/rh/cuentas" class="nav-item active"><span class="nav-icon"></span> Cuentas</a><a href="/rh/servicios" class="nav-item"><span class="nav-icon"></span> Servicios</a><a href="/rh/movimientos" class="nav-item"><span class="nav-icon"></span> Movimientos</a><a href="/rh/ajustes" class="nav-item"><span class="nav-icon"></span> Ajustes</a><a href="/rh/reportes" class="nav-item"><span class="nav-icon"></span> Reportes</a></div>
+            <div class="sidebar-section"><div class="sidebar-title">Operaciones</div><a href="/rh/solicitudes" class="nav-item"><span class="nav-icon"></span> Solicitudes</a><a href="/rh/anomalias" class="nav-item"><span class="nav-icon"></span> Anomalías IA</a></div>
+            <div class="sidebar-section"><div class="sidebar-title">Sistema</div><a href="/auditoria" class="nav-item"><span class="nav-icon"></span> Auditoría</a></div>
         </div>
         <div class="content">
             @if(session('success'))<div class="alert alert-success">{{ session('success') }}</div>@endif
@@ -98,12 +98,12 @@
                         <td>
                             <div class="acciones">
                                 @if($c->estado == 'activa')
-                                    <button onclick="mostrarCerrar({{ $c->id }},'{{ $c->codigo }}')" class="btn btn-red btn-sm" title="Cerrar">✕</button>
-                                    <a href="/rh/cuentas/congelar/{{ $c->id }}" class="btn btn-orange btn-sm" title="Congelar">❄</a>
+                                    <button onclick="mostrarCerrar({{ $c->id }},'{{ $c->codigo }}')" class="btn btn-red btn-sm" title="Cerrar"></button>
+                                    <a href="/rh/cuentas/congelar/{{ $c->id }}" class="btn btn-orange btn-sm" title="Congelar"></a>
                                     <button onclick="mostrarPrioridad({{ $c->id }},'{{ $c->prioridad }}')" class="btn btn-blue btn-sm" title="Cambiar Prioridad">⬆</button>
                                 @elseif($c->estado == 'congelada')
                                     <a href="/rh/cuentas/congelar/{{ $c->id }}" class="btn btn-green btn-sm" title="Reactivar">▶</a>
-                                    <button onclick="mostrarCerrar({{ $c->id }},'{{ $c->codigo }}')" class="btn btn-red btn-sm" title="Cerrar">✕</button>
+                                    <button onclick="mostrarCerrar({{ $c->id }},'{{ $c->codigo }}')" class="btn btn-red btn-sm" title="Cerrar"></button>
                                 @else
                                     <span style="font-size:11px;color:var(--neutral-400);">—</span>
                                 @endif
@@ -120,7 +120,7 @@
     <!-- MODAL CERRAR -->
     <div class="modal-overlay" id="modalCerrar">
         <div class="modal">
-            <div class="modal-head"><h3>✕ Cerrar Cuenta <span id="cerrarCodigo"></span></h3><button onclick="cerrarModal('modalCerrar')" style="background:none;border:none;font-size:18px;cursor:pointer;">×</button></div>
+            <div class="modal-head"><h3> Cerrar Cuenta <span id="cerrarCodigo"></span></h3><button onclick="cerrarModal('modalCerrar')" style="background:none;border:none;font-size:18px;cursor:pointer;">×</button></div>
             <form method="POST" action="" id="formCerrar">
                 @csrf
                 <input type="hidden" id="cerrarId" name="solicitud_id">

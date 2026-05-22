@@ -54,18 +54,18 @@ td{padding:10px 12px;font-size:12px;border-bottom:1px solid #f0f0f0}
 <div class="main">
 <div class="sidebar">
 <div class="sidebar-title">Consultas</div>
-<a href="/nivel-a" class="nav-item"><span class="nav-icon">📊</span> Dashboard</a>
-<a href="/citas/agenda" class="nav-item"><span class="nav-icon">📱</span> Agenda</a>
-<a href="/expedientes" class="nav-item"><span class="nav-icon">📁</span> Expedientes</a>
-<a href="/receta/crear" class="nav-item"><span class="nav-icon">📝</span> Receta</a>
+<a href="/nivel-a" class="nav-item"><span class="nav-icon"></span> Dashboard</a>
+<a href="/citas/agenda" class="nav-item"><span class="nav-icon"></span> Agenda</a>
+<a href="/expedientes" class="nav-item"><span class="nav-icon"></span> Expedientes</a>
+<a href="/receta/crear" class="nav-item"><span class="nav-icon"></span> Receta</a>
 <div class="sidebar-title">Pacientes</div>
-<a href="/nivel-a/pacientes" class="nav-item active"><span class="nav-icon">💳</span> Mis Pacientes</a>
+<a href="/nivel-a/pacientes" class="nav-item active"><span class="nav-icon"></span> Mis Pacientes</a>
 <a href="/nivel-a/presupuestos/crear" class="nav-item"><span class="nav-icon"></span> Nuevo Presupuesto</a>
 <a href="/nivel-a/servicios" class="nav-item"><span class="nav-icon"></span> Ver Servicios</a>
 </div>
 <div class="content">
 <div class="card">
-<div class="card-header"><h3>👤 Datos</h3></div>
+<div class="card-header"><h3> Datos</h3></div>
 <div class="card-body">
 <div class="info-grid">
 <div class="info-item"><label>Paciente</label><span>{{ $presupuesto->paciente_nombre }}</span></div>
@@ -76,7 +76,7 @@ td{padding:10px 12px;font-size:12px;border-bottom:1px solid #f0f0f0}
 <div class="info-item"><label>Creación</label><span>{{ substr($presupuesto->created_at, 0, 16) }}</span></div>
 </div>
 @if($presupuesto->notas)
-<div style="margin-top:12px;padding:10px;background:#f8f9fa;border-radius:6px;font-size:12px;color:#666;">📝 {{ $presupuesto->notas }}</div>
+<div style="margin-top:12px;padding:10px;background:#f8f9fa;border-radius:6px;font-size:12px;color:#666;"> {{ $presupuesto->notas }}</div>
 @endif
 </div>
 </div>
@@ -103,10 +103,10 @@ td{padding:10px 12px;font-size:12px;border-bottom:1px solid #f0f0f0}
 </div>
 </div>
 <div class="card">
-<div class="card-header"><h3>⚙ Cambiar Estado</h3></div>
+<div class="card-header"><h3> Cambiar Estado</h3></div>
 <div class="card-body">
 <div class="acciones">
-<form method="POST" action="/nivel-a/presupuestos/estado/{{ $presupuesto->id }}" style="display:inline;">@csrf<input type="hidden" name="estado" value="borrador"><button type="submit" class="btn btn-dark">📝 Borrador</button></form>
+<form method="POST" action="/nivel-a/presupuestos/estado/{{ $presupuesto->id }}" style="display:inline;">@csrf<input type="hidden" name="estado" value="borrador"><button type="submit" class="btn btn-dark"> Borrador</button></form>
 <form method="POST" action="/nivel-a/presupuestos/estado/{{ $presupuesto->id }}" style="display:inline;">@csrf<input type="hidden" name="estado" value="enviado"><button type="submit" class="btn btn-orange"> Enviar</button></form>
 <form method="POST" action="/nivel-a/presupuestos/estado/{{ $presupuesto->id }}" style="display:inline;">@csrf<input type="hidden" name="estado" value="aprobado"><button type="submit" class="btn btn-green"> Aprobar</button></form>
 </div>

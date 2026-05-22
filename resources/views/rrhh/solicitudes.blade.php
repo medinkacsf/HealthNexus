@@ -77,10 +77,10 @@
     <div class="main">
         <div class="sidebar">
             <h3>Menú RRHH</h3>
-            <a href="/rh" class="nav-item"><span>📊</span> Dashboard</a>
+            <a href="/rh" class="nav-item"><span></span> Dashboard</a>
             <a href="/rh/solicitudes" class="nav-item active"><span></span> Solicitudes</a>
-            <a href="/rh/anomalias" class="nav-item"><span>🚨</span> Anomalías</a>
-            <a href="/auditoria" class="nav-item"><span>🔒</span> Auditoría</a>
+            <a href="/rh/anomalias" class="nav-item"><span></span> Anomalías</a>
+            <a href="/auditoria" class="nav-item"><span></span> Auditoría</a>
         </div>
 
         <div class="content">
@@ -95,7 +95,7 @@
             <div class="card">
                 <div class="card-head">
                     <h3> Todas las Solicitudes ({{ $solicitudes->total() }})</h3>
-                    <form action="/rh/detectar-anomalias" method="POST" style="display:inline;">@csrf<button type="submit" class="btn btn-red btn-sm">🔍 Detectar Anomalías IA</button></form>
+                    <form action="/rh/detectar-anomalias" method="POST" style="display:inline;">@csrf<button type="submit" class="btn btn-red btn-sm"> Detectar Anomalías IA</button></form>
                 </div>
                 <div class="card-body">
                     @if($solicitudes->count() > 0)
@@ -112,7 +112,7 @@
                             <td>
                                 <span class="tag tag-{{ $s->estado }}">{{ ucfirst($s->estado) }}</span>
                                 @if($s->anomalia_detectada)
-                                    <br><span class="tag tag-revision" style="margin-top:2px;">⚠ {{ $s->anomaly_tipo }}</span>
+                                    <br><span class="tag tag-revision" style="margin-top:2px;"> {{ $s->anomaly_tipo }}</span>
                                 @endif
                             </td>
                             <td class="acciones">

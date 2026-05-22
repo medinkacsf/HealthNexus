@@ -39,7 +39,7 @@
 </head>
 <body>
     <div class="header">
-        <h1>🔒 Auditoria Inmutable</h1>
+        <h1> Auditoria Inmutable</h1>
         <div>
             <a href="/rh" class="btn btn-back">← Volver a RRHH</a><form action="/logout" method="POST" style="display:inline;margin-left:10px;">@csrf<button type="submit" class="btn btn-back">Salir</button></form>
         </div>
@@ -79,7 +79,7 @@
             <option value="navegacion" {{ request('tipo') == 'navegacion' ? 'selected' : '' }}>Navegacion</option>
         </select>
         <input type="date" name="fecha" value="{{ request('fecha') }}">
-        <button type="submit" class="btn-filtrar">🔍 Filtrar</button>
+        <button type="submit" class="btn-filtrar"> Filtrar</button>
         <a href="{{ route('auditoria.panel') }}" style="color:#e74c3c; text-decoration:none; font-size:13px;">Limpiar filtros</a>
     </form>
 
@@ -100,7 +100,7 @@
             <tbody>
                 @foreach($logs as $log)
                 <tr>
-                    <td><span class="lock-icon">🔒</span> {{ $log->id }}</td>
+                    <td><span class="lock-icon"></span> {{ $log->id }}</td>
                     <td>{{ date('d/m/Y H:i:s', strtotime($log->created_at)) }}</td>
                     <td>
                         @if($log->usuario_nombre)
@@ -155,7 +155,7 @@
     </div>
 
     <div style="margin-top:15px; text-align:center;">
-        <span class="inmutable">🔒 REGISTROS INMUTABLES - Estos datos no pueden ser modificados ni eliminados por ningun usuario</span>
+        <span class="inmutable"> REGISTROS INMUTABLES - Estos datos no pueden ser modificados ni eliminados por ningun usuario</span>
     </div>
 </body>
 </html>

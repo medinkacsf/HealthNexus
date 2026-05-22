@@ -94,7 +94,7 @@
         
         <!-- Información del Paciente -->
         <div class="paciente-info">
-            <h2>👤 Datos del Paciente</h2>
+            <h2> Datos del Paciente</h2>
             <div class="info-grid">
                 <div class="info-item">
                     <label>Nombre</label>
@@ -126,7 +126,7 @@
             
             <!-- Signos Vitales -->
             <div class="form-section">
-                <h2>💓 Signos Vitales</h2>
+                <h2> Signos Vitales</h2>
                 <div class="signos-grid">
                     <div class="form-group signo-item">
                         <label>TA (mmHg)</label>
@@ -165,7 +165,7 @@
             
             <!-- Diagnóstico -->
             <div class="form-section">
-                <h2>🔍 Diagnóstico</h2>
+                <h2> Diagnóstico</h2>
                 <div class="form-group">
                     <label>Diagnóstico / Impresión Clínica</label>
                     <textarea name="diagnostico" required placeholder="Describa el diagnóstico del paciente..."></textarea>
@@ -200,7 +200,7 @@
                             <input type="number" name="medicamentos[0][cantidad]" placeholder="Cant" min="1" value="1">
                             <input type="number" name="medicamentos[0][dias]" placeholder="Días" min="1" value="7">
                             <input type="text" name="medicamentos[0][posologia]" placeholder="Ej: 1 cada 8 hrs" required>
-                            <button type="button" class="btn-remove-med" onclick="removeMed(this)">✕</button>
+                            <button type="button" class="btn-remove-med" onclick="removeMed(this)"></button>
                         </div>
                     </div>
                     <button type="button" class="btn-add-med" onclick="addMedicamento()">+ Agregar Medicamento</button>
@@ -226,7 +226,7 @@
             
             <!-- Observaciones -->
             <div class="form-section">
-                <h2>📝 Observaciones</h2>
+                <h2> Observaciones</h2>
                 <div class="form-group">
                     <label>Notas adicionales</label>
                     <textarea name="observaciones" placeholder="Observaciones adicionales del médico..."></textarea>
@@ -289,7 +289,7 @@
                 <input type="number" name="medicamentos[${medIndex}][cantidad]" placeholder="Cant" min="1" value="1">
                 <input type="number" name="medicamentos[${medIndex}][dias]" placeholder="Días" min="1" value="7">
                 <input type="text" name="medicamentos[${medIndex}][posologia]" placeholder="Ej: 1 cada 8 hrs" required>
-                <button type="button" class="btn-remove-med" onclick="removeMed(this)">✕</button>
+                <button type="button" class="btn-remove-med" onclick="removeMed(this)"></button>
             `;
             container.appendChild(row);
             medIndex++;
@@ -307,7 +307,7 @@
             const esControlado = option.dataset.controlado === '1';
             const nivel = option.dataset.nivel;
             if (esControlado) {
-                if (!confirm('⚠ Este es un MEDICAMENTO CONTROLADO (Nivel ' + nivel + '). ¿Está autorizado para recetarlo?')) {
+                if (!confirm(' Este es un MEDICAMENTO CONTROLADO (Nivel ' + nivel + '). ¿Está autorizado para recetarlo?')) {
                     select.selectedIndex = 0;
                 }
             }

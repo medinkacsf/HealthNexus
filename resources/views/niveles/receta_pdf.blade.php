@@ -31,7 +31,7 @@
 <body>
     <div class="no-print">
         <button class="btn-print" onclick="window.print()"> IMPRIR RECETA</button>
-        <button class="btn-print" style="background:#e74c3c;" onclick="window.close()">✕ Cerrar</button>
+        <button class="btn-print" style="background:#e74c3c;" onclick="window.close()"> Cerrar</button>
     </div>
 
     <div class="header-receta">

@@ -25,7 +25,7 @@
 </head>
 <body>
     <div class="header">
-        <h1>📝 Nueva Receta Médica</h1>
+        <h1> Nueva Receta Médica</h1>
         <a href="/nivel-a" class="btn btn-dark">← Volver</a>
     </div>
 
@@ -108,7 +108,7 @@
                         <label>Nivel</label>
                         <input type="text" name="nivel[]" value="C" readonly style="background:#eee;">
                     </div>
-                    <button type="button" class="remove-btn" onclick="this.closest('.med-row').remove()">✕</button>
+                    <button type="button" class="remove-btn" onclick="this.closest('.med-row').remove()"></button>
                 </div>
             `;
             container.appendChild(row);

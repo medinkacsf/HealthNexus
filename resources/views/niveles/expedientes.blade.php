@@ -28,7 +28,7 @@
 </head>
 <body>
     <div class="header">
-        <h1>📁 Expedientes Clinicos</h1>
+        <h1> Expedientes Clinicos</h1>
         <div style="display:flex;gap:10px;">
             <a href="/expediente/crear" class="btn-header">+ Nuevo</a>
             <a href="/superadmin" class="btn-header">Volver</a>
@@ -44,7 +44,7 @@
             <h2> Expedientes ({{ $expedientes->count() }}) <span class="all-badge">TODOS LOS MÉDICOS</span></h2>
             @if($expedientes->isEmpty())
                 <div class="empty">
-                    <p style="font-size:40px; margin-bottom:10px;">📁</p>
+                    <p style="font-size:40px; margin-bottom:10px;"></p>
                     <p>No hay expedientes</p>
                 </div>
             @else

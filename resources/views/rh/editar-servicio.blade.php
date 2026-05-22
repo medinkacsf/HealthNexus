@@ -48,19 +48,19 @@
 </head>
 <body>
     <div class="header">
-        <h1>✏ Editar Servicio {{ $servicio->codigo }}</h1>
+        <h1> Editar Servicio {{ $servicio->codigo }}</h1>
         <div class="header-right">
             <span class="tag tag-{{ $servicio->estado }}">{{ $servicio->estado == 'en_revision' ? 'En Revisión' : ucfirst($servicio->estado) }}</span>
             <span>{{ auth()->user()->name }}</span>
-            <form action="/logout" method="POST" style="display:inline;">@csrf<button type="submit" class="btn btn-logout">🚪 Salir</button></form>
+            <form action="/logout" method="POST" style="display:inline;">@csrf<button type="submit" class="btn btn-logout"> Salir</button></form>
         </div>
     </div>
     <div class="main">
         <div class="sidebar">
-            <div class="sidebar-section"><div class="sidebar-title">Principal</div><a href="/rh" class="nav-item"><span class="nav-icon">📊</span> Dashboard</a></div>
-            <div class="sidebar-section"><div class="sidebar-title">Finanzas</div><a href="/rh/cuentas" class="nav-item"><span class="nav-icon">🏦</span> Cuentas</a><a href="/rh/servicios" class="nav-item active"><span class="nav-icon"></span> Servicios</a><a href="/rh/movimientos" class="nav-item"><span class="nav-icon"></span> Movimientos</a><a href="/rh/ajustes" class="nav-item"><span class="nav-icon">⚙</span> Ajustes</a><a href="/rh/reportes" class="nav-item"><span class="nav-icon">📈</span> Reportes</a></div>
-            <div class="sidebar-section"><div class="sidebar-title">Operaciones</div><a href="/rh/solicitudes" class="nav-item"><span class="nav-icon">📨</span> Solicitudes</a><a href="/rh/anomalias" class="nav-item"><span class="nav-icon">🚨</span> Anomalías IA</a></div>
-            <div class="sidebar-section"><div class="sidebar-title">Sistema</div><a href="/auditoria" class="nav-item"><span class="nav-icon">🔒</span> Auditoría</a></div>
+            <div class="sidebar-section"><div class="sidebar-title">Principal</div><a href="/rh" class="nav-item"><span class="nav-icon"></span> Dashboard</a></div>
+            <div class="sidebar-section"><div class="sidebar-title">Finanzas</div><a href="/rh/cuentas" class="nav-item"><span class="nav-icon"></span> Cuentas</a><a href="/rh/servicios" class="nav-item active"><span class="nav-icon"></span> Servicios</a><a href="/rh/movimientos" class="nav-item"><span class="nav-icon"></span> Movimientos</a><a href="/rh/ajustes" class="nav-item"><span class="nav-icon"></span> Ajustes</a><a href="/rh/reportes" class="nav-item"><span class="nav-icon"></span> Reportes</a></div>
+            <div class="sidebar-section"><div class="sidebar-title">Operaciones</div><a href="/rh/solicitudes" class="nav-item"><span class="nav-icon"></span> Solicitudes</a><a href="/rh/anomalias" class="nav-item"><span class="nav-icon"></span> Anomalías IA</a></div>
+            <div class="sidebar-section"><div class="sidebar-title">Sistema</div><a href="/auditoria" class="nav-item"><span class="nav-icon"></span> Auditoría</a></div>
         </div>
         <div class="content">
             @if($errors->any())
@@ -70,7 +70,7 @@
             @endif
 
             <div class="card">
-                <div class="card-header"><h3>📝 Modificar Servicio</h3></div>
+                <div class="card-header"><h3> Modificar Servicio</h3></div>
                 <div class="card-body">
                     <form method="POST" action="/rh/servicios/actualizar/{{ $servicio->id }}">
                         @csrf
@@ -135,7 +135,7 @@
                         </div>
                         <div class="form-actions">
                             <a href="/rh/servicios" class="btn btn-outline">Cancelar</a>
-                            <button type="submit" class="btn btn-green">💾 Guardar Cambios</button>
+                            <button type="submit" class="btn btn-green"> Guardar Cambios</button>
                         </div>
                     </form>
                 </div>

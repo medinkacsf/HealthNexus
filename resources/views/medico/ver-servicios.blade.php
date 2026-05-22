@@ -43,18 +43,18 @@ tr:hover td{background:#fafafa}
 <div class="main">
 <div class="sidebar">
 <div class="sidebar-title">Consultas</div>
-<a href="/nivel-a" class="nav-item"><span class="nav-icon">📊</span> Dashboard</a>
-<a href="/citas/agenda" class="nav-item"><span class="nav-icon">📱</span> Agenda</a>
-<a href="/expedientes" class="nav-item"><span class="nav-icon">📁</span> Expedientes</a>
-<a href="/receta/crear" class="nav-item"><span class="nav-icon">📝</span> Receta</a>
-<a href="/medicamentos" class="nav-item"><span class="nav-icon">🧪</span> Medicamentos</a>
+<a href="/nivel-a" class="nav-item"><span class="nav-icon"></span> Dashboard</a>
+<a href="/citas/agenda" class="nav-item"><span class="nav-icon"></span> Agenda</a>
+<a href="/expedientes" class="nav-item"><span class="nav-icon"></span> Expedientes</a>
+<a href="/receta/crear" class="nav-item"><span class="nav-icon"></span> Receta</a>
+<a href="/medicamentos" class="nav-item"><span class="nav-icon"></span> Medicamentos</a>
 <div class="sidebar-title">Pacientes</div>
-<a href="/nivel-a/pacientes" class="nav-item"><span class="nav-icon">💳</span> Mis Pacientes</a>
+<a href="/nivel-a/pacientes" class="nav-item"><span class="nav-icon"></span> Mis Pacientes</a>
 <a href="/nivel-a/presupuestos/crear" class="nav-item"><span class="nav-icon"></span> Nuevo Presupuesto</a>
 <a href="/nivel-a/servicios" class="nav-item active"><span class="nav-icon"></span> Ver Servicios</a>
 </div>
 <div class="content">
-<div class="search-bar"><input type="text" id="buscar" placeholder="🔍 Buscar servicio..." oninput="filtrar()"></div>
+<div class="search-bar"><input type="text" id="buscar" placeholder=" Buscar servicio..." oninput="filtrar()"></div>
 <div class="card">
 <table>
 <tr><th>Código</th><th>Servicio</th><th>Departamento</th><th style="text-align:right;">Precio</th></tr>

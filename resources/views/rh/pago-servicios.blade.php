@@ -54,29 +54,29 @@
 </head>
 <body>
     <div class="header">
-        <h1>💰 Pago de Servicios</h1>
-        <div class="header-right"><span>{{ auth()->user()->name }}</span><form action="/logout" method="POST" style="display:inline;">@csrf<button type="submit" class="btn btn-logout">🚪 Salir</button></form></div>
+        <h1> Pago de Servicios</h1>
+        <div class="header-right"><span>{{ auth()->user()->name }}</span><form action="/logout" method="POST" style="display:inline;">@csrf<button type="submit" class="btn btn-logout"> Salir</button></form></div>
     </div>
     <div class="main">
         <div class="sidebar">
-            <div class="sidebar-section"><div class="sidebar-title">Principal</div><a href="/rh" class="nav-item"><span class="nav-icon">📊</span> Dashboard</a></div>
-            <div class="sidebar-section"><div class="sidebar-title">Pacientes</div><a href="/rh/cuentas-pacientes" class="nav-item"><span class="nav-icon">💳</span> Cuentas Pacientes</a><a href="/rh/presupuestos" class="nav-item"><span class="nav-icon"></span> Presupuestos</a><a href="/rh/pago-servicios" class="nav-item active"><span class="nav-icon">💰</span> Pago de Servicios</a><a href="/rh/corte-caja" class="nav-item"><span class="nav-icon"> Macy</span> Corte de Caja</a><a href="/rh/depositos" class="nav-item"><span class="nav-icon">🔒</span> Liberar Depósitos</a></div>
-            <div class="sidebar-section"><div class="sidebar-title">Operaciones</div><a href="/rh/solicitudes" class="nav-item"><span class="nav-icon">📨</span> Solicitudes</a><a href="/rh/anomalias" class="nav-item"><span class="nav-icon">🚨</span> Anomalías IA</a></div>
-            <div class="sidebar-section"><div class="sidebar-title">Sistema</div><a href="/auditoria" class="nav-item"><span class="nav-icon">🔐</span> Auditoría</a></div>
+            <div class="sidebar-section"><div class="sidebar-title">Principal</div><a href="/rh" class="nav-item"><span class="nav-icon"></span> Dashboard</a></div>
+            <div class="sidebar-section"><div class="sidebar-title">Pacientes</div><a href="/rh/cuentas-pacientes" class="nav-item"><span class="nav-icon"></span> Cuentas Pacientes</a><a href="/rh/presupuestos" class="nav-item"><span class="nav-icon"></span> Presupuestos</a><a href="/rh/pago-servicios" class="nav-item active"><span class="nav-icon"></span> Pago de Servicios</a><a href="/rh/corte-caja" class="nav-item"><span class="nav-icon"> Macy</span> Corte de Caja</a><a href="/rh/depositos" class="nav-item"><span class="nav-icon"></span> Liberar Depósitos</a></div>
+            <div class="sidebar-section"><div class="sidebar-title">Operaciones</div><a href="/rh/solicitudes" class="nav-item"><span class="nav-icon"></span> Solicitudes</a><a href="/rh/anomalias" class="nav-item"><span class="nav-icon"></span> Anomalías IA</a></div>
+            <div class="sidebar-section"><div class="sidebar-title">Sistema</div><a href="/auditoria" class="nav-item"><span class="nav-icon"></span> Auditoría</a></div>
         </div>
         <div class="content">
             @if(session('success'))<div class="alert alert-success">{{ session('success') }}</div>@endif
             @if(session('error'))<div class="alert alert-danger">{{ session('error') }}</div>@endif
             
             <div class="summary">
-                <div class="summary-card green"><div class="summary-label">💰 Cobrado Hoy</div><div class="summary-value" style="color:var(--green-600);">${{ number_format($totalHoy, 2) }}</div></div>
+                <div class="summary-card green"><div class="summary-label"> Cobrado Hoy</div><div class="summary-value" style="color:var(--green-600);">${{ number_format($totalHoy, 2) }}</div></div>
                 <div class="summary-card blue"><div class="summary-label"> Cuentas con Saldo</div><div class="summary-value" style="color:var(--blue-600);">{{ count($cuentas) }}</div></div>
-                <div class="summary-card orange"><div class="summary-label">📊 Total Pagos</div><div class="summary-value" style="color:var(--orange-600);">{{ $pagos->total() }}</div></div>
+                <div class="summary-card orange"><div class="summary-label"> Total Pagos</div><div class="summary-value" style="color:var(--orange-600);">{{ $pagos->total() }}</div></div>
             </div>
             
             <div class="grid-2">
                 <div class="card">
-                    <div class="card-header"><h3>💳 Registrar Pago</h3></div>
+                    <div class="card-header"><h3> Registrar Pago</h3></div>
                     <div class="card-body">
                         <form method="POST" action="/rh/pago-servicios/registrar">
                             @csrf
@@ -96,9 +96,9 @@
                             <div class="form-group">
                                 <label>Método de Pago *</label>
                                 <select name="metodo_pago" required>
-                                    <option value="efectivo">💵 Efectivo</option>
-                                    <option value="tarjeta">💳 Tarjeta</option>
-                                    <option value="transferencia">🏦 Transferencia</option>
+                                    <option value="efectivo"> Efectivo</option>
+                                    <option value="tarjeta"> Tarjeta</option>
+                                    <option value="transferencia"> Transferencia</option>
                                     <option value="cheque">Cheque</option>
                                     <option value="seguro"> Seguro</option>
                                     <option value="deposito">Depósito</option>
@@ -113,7 +113,7 @@
                                 <input type="text" name="concepto" placeholder="Ej: Pago parcial consulta" required>
                             </div>
                             <div class="form-actions">
-                                <button type="submit" class="btn btn-green">💾 Registrar Pago</button>
+                                <button type="submit" class="btn btn-green"> Registrar Pago</button>
                             </div>
                         </form>
                     </div>

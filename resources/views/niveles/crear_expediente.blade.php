@@ -22,7 +22,7 @@
 </head>
 <body>
     <div class="header">
-        <h1>📁 Nuevo Expediente Clínico</h1>
+        <h1> Nuevo Expediente Clínico</h1>
         <a href="/expedientes" class="btn btn-dark">← Volver</a>
     </div>
 
@@ -30,7 +30,7 @@
         <form action="/expediente/guardar" method="POST">
             @csrf
             <div class="card">
-                <h2>👤 Datos del Paciente</h2>
+                <h2> Datos del Paciente</h2>
                 <div class="form-grid">
                     <div>
                         <label>Nombre Completo *</label>

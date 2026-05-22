@@ -54,13 +54,13 @@
 <body>
     <div class="header">
         <h1> Macy Corte de Caja</h1>
-        <div class="header-right"><span>{{ auth()->user()->name }}</span><form action="/logout" method="POST" style="display:inline;">@csrf<button type="submit" class="btn btn-logout">🚪 Salir</button></form></div>
+        <div class="header-right"><span>{{ auth()->user()->name }}</span><form action="/logout" method="POST" style="display:inline;">@csrf<button type="submit" class="btn btn-logout"> Salir</button></form></div>
     </div>
     <div class="main">
         <div class="sidebar">
-            <div class="sidebar-section"><div class="sidebar-title">Principal</div><a href="/rh" class="nav-item"><span class="nav-icon">📊</span> Dashboard</a></div>
-            <div class="sidebar-section"><div class="sidebar-title">Pacientes</div><a href="/rh/cuentas-pacientes" class="nav-item"><span class="nav-icon">💳</span> Cuentas Pacientes</a><a href="/rh/presupuestos" class="nav-item"><span class="nav-icon"></span> Presupuestos</a><a href="/rh/pago-servicios" class="nav-item"><span class="nav-icon">💰</span> Pago de Servicios</a><a href="/rh/corte-caja" class="nav-item active"><span class="nav-icon"> Macy</span> Corte de Caja</a><a href="/rh/depositos" class="nav-item"><span class="nav-icon">🔒</span> Liberar Depósitos</a></div>
-            <div class="sidebar-section"><div class="sidebar-title">Sistema</div><a href="/auditoria" class="nav-item"><span class="nav-icon">🔐</span> Auditoría</a></div>
+            <div class="sidebar-section"><div class="sidebar-title">Principal</div><a href="/rh" class="nav-item"><span class="nav-icon"></span> Dashboard</a></div>
+            <div class="sidebar-section"><div class="sidebar-title">Pacientes</div><a href="/rh/cuentas-pacientes" class="nav-item"><span class="nav-icon"></span> Cuentas Pacientes</a><a href="/rh/presupuestos" class="nav-item"><span class="nav-icon"></span> Presupuestos</a><a href="/rh/pago-servicios" class="nav-item"><span class="nav-icon"></span> Pago de Servicios</a><a href="/rh/corte-caja" class="nav-item active"><span class="nav-icon"> Macy</span> Corte de Caja</a><a href="/rh/depositos" class="nav-item"><span class="nav-icon"></span> Liberar Depósitos</a></div>
+            <div class="sidebar-section"><div class="sidebar-title">Sistema</div><a href="/auditoria" class="nav-item"><span class="nav-icon"></span> Auditoría</a></div>
         </div>
         <div class="content">
             @if(session('success'))<div class="alert alert-success">{{ session('success') }}</div>@endif
@@ -69,15 +69,15 @@
             <div class="grid-2">
                 <div class="card">
                     <div class="card-header">
-                        <h3>🌅 Turno Matutino</h3>
+                        <h3> Turno Matutino</h3>
                         <span class="status-badge {{ $corteMatutino ? 'cerrado' : 'pendiente' }}">{{ $corteMatutino ? ' Cerrado' : '⏳ Pendiente' }}</span>
                     </div>
                     <div class="card-body">
                         @if($corteMatutino)
                         <div style="font-size:12px;margin-bottom:12px;color:var(--neutral-400);">Cajero: {{ $corteMatutino->cajero_nombre }} | Cerrado: {{ $corteMatutino->fecha_cierre }}</div>
-                        <div class="metodo-row"><div style="display:flex;align-items:center;"><span class="metodo-icon efectivo">💵</span>Efectivo</div><strong>${{ number_format($corteMatutino->total_ingresos_efectivo, 2) }}</strong></div>
-                        <div class="metodo-row"><div style="display:flex;align-items:center;"><span class="metodo-icon tarjeta">💳</span>Tarjeta</div><strong>${{ number_format($corteMatutino->total_ingresos_tarjeta, 2) }}</strong></div>
-                        <div class="metodo-row"><div style="display:flex;align-items:center;"><span class="metodo-icon transferencia">🏦</span>Transferencia</div><strong>${{ number_format($corteMatutino->total_ingresos_transferencia, 2) }}</strong></div>
+                        <div class="metodo-row"><div style="display:flex;align-items:center;"><span class="metodo-icon efectivo"></span>Efectivo</div><strong>${{ number_format($corteMatutino->total_ingresos_efectivo, 2) }}</strong></div>
+                        <div class="metodo-row"><div style="display:flex;align-items:center;"><span class="metodo-icon tarjeta"></span>Tarjeta</div><strong>${{ number_format($corteMatutino->total_ingresos_tarjeta, 2) }}</strong></div>
+                        <div class="metodo-row"><div style="display:flex;align-items:center;"><span class="metodo-icon transferencia"></span>Transferencia</div><strong>${{ number_format($corteMatutino->total_ingresos_transferencia, 2) }}</strong></div>
                         <div class="metodo-row"><div style="display:flex;align-items:center;"><span class="metodo-icon seguro"></span>Seguro</div><strong>${{ number_format($corteMatutino->total_ingresos_seguro, 2) }}</strong></div>
                         <div class="total-box"><div class="label">Total del Turno</div><div class="value">${{ number_format($corteMatutino->total_general, 2) }}</div></div>
                         @else
@@ -93,15 +93,15 @@
                 </div>
                 <div class="card">
                     <div class="card-header">
-                        <h3>🌇 Turno Vespertino</h3>
+                        <h3> Turno Vespertino</h3>
                         <span class="status-badge {{ $corteVespertino ? 'cerrado' : 'pendiente' }}">{{ $corteVespertino ? ' Cerrado' : '⏳ Pendiente' }}</span>
                     </div>
                     <div class="card-body">
                         @if($corteVespertino)
                         <div style="font-size:12px;margin-bottom:12px;color:var(--neutral-400);">Cajero: {{ $corteVespertino->cajero_nombre }}</div>
-                        <div class="metodo-row"><div style="display:flex;align-items:center;"><span class="metodo-icon efectivo">💵</span>Efectivo</div><strong>${{ number_format($corteVespertino->total_ingresos_efectivo, 2) }}</strong></div>
-                        <div class="metodo-row"><div style="display:flex;align-items:center;"><span class="metodo-icon tarjeta">💳</span>Tarjeta</div><strong>${{ number_format($corteVespertino->total_ingresos_tarjeta, 2) }}</strong></div>
-                        <div class="metodo-row"><div style="display:flex;align-items:center;"><span class="metodo-icon transferencia">🏦</span>Transferencia</div><strong>${{ number_format($corteVespertino->total_ingresos_transferencia, 2) }}</strong></div>
+                        <div class="metodo-row"><div style="display:flex;align-items:center;"><span class="metodo-icon efectivo"></span>Efectivo</div><strong>${{ number_format($corteVespertino->total_ingresos_efectivo, 2) }}</strong></div>
+                        <div class="metodo-row"><div style="display:flex;align-items:center;"><span class="metodo-icon tarjeta"></span>Tarjeta</div><strong>${{ number_format($corteVespertino->total_ingresos_tarjeta, 2) }}</strong></div>
+                        <div class="metodo-row"><div style="display:flex;align-items:center;"><span class="metodo-icon transferencia"></span>Transferencia</div><strong>${{ number_format($corteVespertino->total_ingresos_transferencia, 2) }}</strong></div>
                         <div class="metodo-row"><div style="display:flex;align-items:center;"><span class="metodo-icon seguro"></span>Seguro</div><strong>${{ number_format($corteVespertino->total_ingresos_seguro, 2) }}</strong></div>
                         <div class="total-box"><div class="label">Total del Turno</div><div class="value">${{ number_format($corteVespertino->total_general, 2) }}</div></div>
                         @else
@@ -118,7 +118,7 @@
             </div>
 
             <div class="card">
-                <div class="card-header"><h3>📊 Resumen del Día</h3></div>
+                <div class="card-header"><h3> Resumen del Día</h3></div>
                 <table>
                     <tr><th>Fecha</th><th>Turno</th><th>Cajero</th><th>Efectivo</th><th>Tarjeta</th><th>Transferencia</th><th>Seguro</th><th style="text-align:right;">Total</th><th>Estado</th></tr>
                     @if(count($cortesAnteriores) > 0)

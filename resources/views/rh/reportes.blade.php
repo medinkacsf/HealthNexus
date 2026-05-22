@@ -52,32 +52,32 @@
 </head>
 <body>
     <div class="header">
-        <h1>📈 Reportes Financieros</h1>
+        <h1> Reportes Financieros</h1>
         <div class="header-right">
             <span>{{ auth()->user()->name }}</span>
-            <form action="/logout" method="POST" style="display:inline;">@csrf<button type="submit" class="btn btn-logout">🚪 Salir</button></form>
+            <form action="/logout" method="POST" style="display:inline;">@csrf<button type="submit" class="btn btn-logout"> Salir</button></form>
         </div>
     </div>
     <div class="main">
         <div class="sidebar">
-            <div class="sidebar-section"><div class="sidebar-title">Principal</div><a href="/rh" class="nav-item"><span class="nav-icon">📊</span> Dashboard</a></div>
-            <div class="sidebar-section"><div class="sidebar-title">Finanzas</div><a href="/rh/cuentas" class="nav-item"><span class="nav-icon">🏦</span> Cuentas</a><a href="/rh/servicios" class="nav-item"><span class="nav-icon"></span> Servicios</a><a href="/rh/movimientos" class="nav-item"><span class="nav-icon"></span> Movimientos</a><a href="/rh/ajustes" class="nav-item"><span class="nav-icon">⚙</span> Ajustes</a><a href="/rh/reportes" class="nav-item active"><span class="nav-icon">📈</span> Reportes</a></div>
-            <div class="sidebar-section"><div class="sidebar-title">Operaciones</div><a href="/rh/solicitudes" class="nav-item"><span class="nav-icon">📨</span> Solicitudes</a><a href="/rh/anomalias" class="nav-item"><span class="nav-icon">🚨</span> Anomalías IA</a></div>
-            <div class="sidebar-section"><div class="sidebar-title">Sistema</div><a href="/auditoria" class="nav-item"><span class="nav-icon">🔒</span> Auditoría</a></div>
+            <div class="sidebar-section"><div class="sidebar-title">Principal</div><a href="/rh" class="nav-item"><span class="nav-icon"></span> Dashboard</a></div>
+            <div class="sidebar-section"><div class="sidebar-title">Finanzas</div><a href="/rh/cuentas" class="nav-item"><span class="nav-icon"></span> Cuentas</a><a href="/rh/servicios" class="nav-item"><span class="nav-icon"></span> Servicios</a><a href="/rh/movimientos" class="nav-item"><span class="nav-icon"></span> Movimientos</a><a href="/rh/ajustes" class="nav-item"><span class="nav-icon"></span> Ajustes</a><a href="/rh/reportes" class="nav-item active"><span class="nav-icon"></span> Reportes</a></div>
+            <div class="sidebar-section"><div class="sidebar-title">Operaciones</div><a href="/rh/solicitudes" class="nav-item"><span class="nav-icon"></span> Solicitudes</a><a href="/rh/anomalias" class="nav-item"><span class="nav-icon"></span> Anomalías IA</a></div>
+            <div class="sidebar-section"><div class="sidebar-title">Sistema</div><a href="/auditoria" class="nav-item"><span class="nav-icon"></span> Auditoría</a></div>
         </div>
         <div class="content">
             <!-- RESUMEN GENERAL -->
             <div class="stats-grid">
                 <div class="stat-card green">
-                    <div class="stat-label">💰 Total Ingresos</div>
+                    <div class="stat-label"> Total Ingresos</div>
                     <div class="stat-value green">${{ number_format($totalIngresos, 2) }}</div>
                 </div>
                 <div class="stat-card red">
-                    <div class="stat-label">💸 Total Egresos</div>
+                    <div class="stat-label"> Total Egresos</div>
                     <div class="stat-value red">${{ number_format($totalEgresos, 2) }}</div>
                 </div>
                 <div class="stat-card blue">
-                    <div class="stat-label">📊 Balance Neto</div>
+                    <div class="stat-label"> Balance Neto</div>
                     <div class="stat-value blue">${{ number_format($balance, 2) }}</div>
                 </div>
             </div>
@@ -85,7 +85,7 @@
             <div class="grid-2">
                 <!-- INGRESOS POR CUENTA -->
                 <div class="card">
-                    <div class="card-header"><h3>💰 Ingresos por Cuenta</h3></div>
+                    <div class="card-header"><h3> Ingresos por Cuenta</h3></div>
                     <div class="card-body">
                         @php $maxIng = $ingresosPorCuenta->max('total') ?? 1; @endphp
                         @if(count($ingresosPorCuenta) > 0)
@@ -104,7 +104,7 @@
 
                 <!-- EGRESOS POR CUENTA -->
                 <div class="card">
-                    <div class="card-header"><h3>💸 Egresos por Cuenta</h3></div>
+                    <div class="card-header"><h3> Egresos por Cuenta</h3></div>
                     <div class="card-body">
                         @php $maxEgr = $egresosPorCuenta->max('total') ?? 1; @endphp
                         @if(count($egresosPorCuenta) > 0)
@@ -172,7 +172,7 @@
 
             <!-- RESUMEN DE ESTADOS -->
             <div class="card" style="margin-bottom:20px;">
-                <div class="card-header"><h3>📊 Resumen de Estados</h3></div>
+                <div class="card-header"><h3> Resumen de Estados</h3></div>
                 <div class="card-body">
                     <div style="margin-bottom:12px;">
                         <strong style="font-size:12px;color:var(--neutral-600);">Cuentas por estado:</strong><br>

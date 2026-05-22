@@ -54,19 +54,19 @@ tr:hover td{background:#fafafa}
 <div class="main">
 <div class="sidebar">
 <div class="sidebar-title">Consultas</div>
-<a href="/nivel-a" class="nav-item"><span class="nav-icon">📊</span> Dashboard</a>
-<a href="/citas/agenda" class="nav-item"><span class="nav-icon">📱</span> Agenda</a>
-<a href="/expedientes" class="nav-item"><span class="nav-icon">📁</span> Expedientes</a>
-<a href="/receta/crear" class="nav-item"><span class="nav-icon">📝</span> Receta</a>
-<a href="/medicamentos" class="nav-item"><span class="nav-icon">🧪</span> Medicamentos</a>
+<a href="/nivel-a" class="nav-item"><span class="nav-icon"></span> Dashboard</a>
+<a href="/citas/agenda" class="nav-item"><span class="nav-icon"></span> Agenda</a>
+<a href="/expedientes" class="nav-item"><span class="nav-icon"></span> Expedientes</a>
+<a href="/receta/crear" class="nav-item"><span class="nav-icon"></span> Receta</a>
+<a href="/medicamentos" class="nav-item"><span class="nav-icon"></span> Medicamentos</a>
 <div class="sidebar-title">Pacientes</div>
-<a href="/nivel-a/pacientes" class="nav-item active"><span class="nav-icon">💳</span> Mis Pacientes</a>
+<a href="/nivel-a/pacientes" class="nav-item active"><span class="nav-icon"></span> Mis Pacientes</a>
 <a href="/nivel-a/presupuestos/crear" class="nav-item"><span class="nav-icon"></span> Nuevo Presupuesto</a>
 <a href="/nivel-a/servicios" class="nav-item"><span class="nav-icon"></span> Ver Servicios</a>
 </div>
 <div class="content">
 <div class="card">
-<div class="card-header"><h3>👤 Información</h3><span class="tag tag-{{ $cuenta->estado }}">{{ strtoupper($cuenta->estado) }}</span></div>
+<div class="card-header"><h3> Información</h3><span class="tag tag-{{ $cuenta->estado }}">{{ strtoupper($cuenta->estado) }}</span></div>
 <div class="card-body">
 <div class="info-grid">
 <div class="info-item"><label>Paciente</label><span>{{ $cuenta->paciente_nombre }}</span></div>
@@ -84,7 +84,7 @@ tr:hover td{background:#fafafa}
 </div>
 </div>
 <div class="card">
-<div class="card-header"><h3>💰 Resumen Financiero</h3></div>
+<div class="card-header"><h3> Resumen Financiero</h3></div>
 <div class="card-body">
 <div class="fin-grid">
 <div class="fin-card"><div>Cargo Total</div><div style="color:#2980b9;">${{ number_format($cuenta->total_cargo, 2) }}</div></div>
@@ -94,7 +94,7 @@ tr:hover td{background:#fafafa}
 </div>
 </div>
 <div class="card">
-<div class="card-header"><h3>🧾 Pagos ({{ count($pagos) }})</h3></div>
+<div class="card-header"><h3> Pagos ({{ count($pagos) }})</h3></div>
 @if(count($pagos) > 0)
 <table>
 <tr><th>Fecha</th><th>Folio</th><th>Método</th><th>Concepto</th><th style="text-align:right;">Monto</th></tr>

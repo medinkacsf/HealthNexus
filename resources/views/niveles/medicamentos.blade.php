@@ -40,7 +40,7 @@
 </head>
 <body>
     <div class="header">
-        <h1>🧪 Cuadro Básico - Medicamentos</h1>
+        <h1> Cuadro Básico - Medicamentos</h1>
         <a href="/nivel-a" class="btn btn-azul">← Volver al Dashboard</a>
     </div>
     <div class="content">
@@ -51,7 +51,7 @@
             </div>
             <div class="stat-card stat-rojo">
                 <div class="stat-num">{{ $total_controlados }}</div>
-                <div class="stat-label">🔒 Controlados (Nivel A)</div>
+                <div class="stat-label"> Controlados (Nivel A)</div>
             </div>
             <div class="stat-card stat-amarillo">
                 <div class="stat-num">{{ count($nivel_b) }}</div>
@@ -64,12 +64,12 @@
         </div>
 
         <div class="alerta">
-            ⚠ <strong>Medicamentos Nivel A</strong> requieren firma obligatoria del Médico Jefe. Incluyen: Morfina, Tramadol, Clonazepam, Alprazolam, Codeína, Ketamina.
+             <strong>Medicamentos Nivel A</strong> requieren firma obligatoria del Médico Jefe. Incluyen: Morfina, Tramadol, Clonazepam, Alprazolam, Codeína, Ketamina.
         </div>
 
         <div class="card">
             <div class="card-header">
-                <h3>🔒 Medicamentos Controlados (Nivel A)</h3>
+                <h3> Medicamentos Controlados (Nivel A)</h3>
                 <span class="badge badge-rojo">{{ count($nivel_a) }}</span>
             </div>
             <div style="padding:0;overflow-x:auto;">
@@ -81,7 +81,7 @@
                         <td><strong>{{ $m->nombre_medicamento }}</strong></td>
                         <td>${{ number_format($m->costo_unitario, 2) }}</td>
                         <td><span class="nivel-badge nivel-A">NIVEL A</span></td>
-                        <td><span class="controlado-badge">🔒 CONTROLADO</span></td>
+                        <td><span class="controlado-badge"> CONTROLADO</span></td>
                     </tr>
                     @endforeach
                 </table>

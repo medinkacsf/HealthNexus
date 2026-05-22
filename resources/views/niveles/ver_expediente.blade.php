@@ -42,7 +42,7 @@
 </head>
 <body>
     <div class="header">
-        <h1>📂 Expediente {{ $expediente->num_expediente }}</h1>
+        <h1> Expediente {{ $expediente->num_expediente }}</h1>
         <div class="no-print" style="display:flex;gap:10px;">
             <button class="btn btn-print" onclick="window.print()"> Imprimir</button>
             <a href="/expedientes" class="btn btn-dark">← Volver</a>
@@ -56,7 +56,7 @@
 
         <div class="grid">
             <div class="sidebar">
-                <h3>👤 Datos del Paciente</h3>
+                <h3> Datos del Paciente</h3>
                 <div class="dato">
                     <div class="dato-label">Nombre</div>
                     <div class="dato-valor">{{ $expediente->paciente_nombre }}</div>
@@ -75,7 +75,7 @@
                 </div>
                 @if($expediente->paciente_alergias)
                 <div class="alergia-box">
-                    ⚠ ALERGIAS: {{ $expediente->paciente_alergias }}
+                     ALERGIAS: {{ $expediente->paciente_alergias }}
                 </div>
                 @endif
                 <div class="dato" style="margin-top:15px;">
@@ -90,7 +90,7 @@
 
             <div>
                 <div class="card">
-                    <h2>📝 Notas Clínicas ({{ $notas->count() }})</h2>
+                    <h2> Notas Clínicas ({{ $notas->count() }})</h2>
                     @if($notas->isEmpty())
                         <p style="color:#888;">No hay notas aún</p>
                     @else
@@ -119,7 +119,7 @@
                 </div>
 
                 <div class="card no-print">
-                    <h2>➕ Agregar Nota Clínica</h2>
+                    <h2> Agregar Nota Clínica</h2>
                     <form action="/expediente/nota/{{ $expediente->id }}" method="POST">
                         @csrf
                         <div class="form-grid">

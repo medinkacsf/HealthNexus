@@ -24,6 +24,6 @@ class RoleSeeder extends Seeder
             Role::create($role);
         }
         
-        $this->command->info('✅ Roles del hospital creados exitosamente.');
+        $this->command->info(' Roles del hospital creados exitosamente.');
     }
 }

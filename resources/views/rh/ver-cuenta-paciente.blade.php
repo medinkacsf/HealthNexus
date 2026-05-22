@@ -40,14 +40,14 @@
 </head>
 <body>
     <div class="header">
-        <h1>💳 Cuenta #{{ $cuenta->id }} - {{ $cuenta->paciente_nombre }}</h1>
-        <div class="header-right"><a href="/rh/cuentas-pacientes" class="btn btn-outline">← Volver</a><form action="/logout" method="POST" style="display:inline;">@csrf<button type="submit" class="btn btn-logout">🚪 Salir</button></form></div>
+        <h1> Cuenta #{{ $cuenta->id }} - {{ $cuenta->paciente_nombre }}</h1>
+        <div class="header-right"><a href="/rh/cuentas-pacientes" class="btn btn-outline">← Volver</a><form action="/logout" method="POST" style="display:inline;">@csrf<button type="submit" class="btn btn-logout"> Salir</button></form></div>
     </div>
     <div class="main">
         <div class="sidebar">
-            <div class="sidebar-section"><div class="sidebar-title">Principal</div><a href="/rh" class="nav-item"><span class="nav-icon">📊</span> Dashboard</a></div>
-            <div class="sidebar-section"><div class="sidebar-title">Pacientes</div><a href="/rh/cuentas-pacientes" class="nav-item active"><span class="nav-icon">💳</span> Cuentas Pacientes</a><a href="/rh/presupuestos" class="nav-item"><span class="nav-icon"></span> Presupuestos</a><a href="/rh/pago-servicios" class="nav-item"><span class="nav-icon">💰</span> Pago de Servicios</a><a href="/rh/corte-caja" class="nav-item"><span class="nav-icon"> Macy</span> Corte de Caja</a><a href="/rh/depositos" class="nav-item"><span class="nav-icon">🔒</span> Liberar Depósitos</a></div>
-            <div class="sidebar-section"><div class="sidebar-title">Sistema</div><a href="/auditoria" class="nav-item"><span class="nav-icon">🔐</span> Auditoría</a></div>
+            <div class="sidebar-section"><div class="sidebar-title">Principal</div><a href="/rh" class="nav-item"><span class="nav-icon"></span> Dashboard</a></div>
+            <div class="sidebar-section"><div class="sidebar-title">Pacientes</div><a href="/rh/cuentas-pacientes" class="nav-item active"><span class="nav-icon"></span> Cuentas Pacientes</a><a href="/rh/presupuestos" class="nav-item"><span class="nav-icon"></span> Presupuestos</a><a href="/rh/pago-servicios" class="nav-item"><span class="nav-icon"></span> Pago de Servicios</a><a href="/rh/corte-caja" class="nav-item"><span class="nav-icon"> Macy</span> Corte de Caja</a><a href="/rh/depositos" class="nav-item"><span class="nav-icon"></span> Liberar Depósitos</a></div>
+            <div class="sidebar-section"><div class="sidebar-title">Sistema</div><a href="/auditoria" class="nav-item"><span class="nav-icon"></span> Auditoría</a></div>
         </div>
         <div class="content">
             <div class="summary">
@@ -66,7 +66,7 @@
                         <p><strong>Último pago:</strong> {{ $cuenta->fecha_ultimo_pago ?? 'Sin pagos' }}</p>
                     </div>
                 </div>
-                <div class="card"><div class="card-header"><h3>📊 Resumen</h3></div>
+                <div class="card"><div class="card-header"><h3> Resumen</h3></div>
                     <div style="padding:16px;font-size:13px;">
                         <p><strong>Total pagos:</strong> {{ count($pagos) }}</p>
                         <p><strong>Saldo pendiente:</strong> <span style="color:{{ $cuenta->saldo_pendiente > 0 ? 'var(--red-600)' : 'var(--green-600)' }};">${{ number_format($cuenta->saldo_pendiente, 2) }}</span></p>
@@ -78,7 +78,7 @@
                 </div>
             </div>
             <div class="card">
-                <div class="card-header"><h3>💰 Historial de Pagos</h3></div>
+                <div class="card-header"><h3> Historial de Pagos</h3></div>
                 <table>
                     <tr><th>Fecha</th><th>Folio</th><th>Método</th><th>Concepto</th><th>Referencia</th><th style="text-align:right;">Monto</th></tr>
                     @if(count($pagos) > 0)

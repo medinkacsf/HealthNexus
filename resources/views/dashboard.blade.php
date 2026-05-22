@@ -74,7 +74,7 @@
 
         <!-- MODULO SEGURIDAD: DETECTOR DE FUGAS -->
         <div class="card">
-            <h3>🚨 Detector de Anomalías (Fugas)</h3>
+            <h3> Detector de Anomalías (Fugas)</h3>
             <input type="number" id="jeringas-input" placeholder="Jeringas usadas">
             <input type="number" id="gasas-input" placeholder="Gasas usadas">
             <button onclick="detectarFuga()">Analizar Consumo</button>
@@ -84,7 +84,7 @@
     </div>
 
     <div class="footer-link">
-        <a href="/admin">🛡 Panel de Administración</a>
+        <a href="/admin"> Panel de Administración</a>
     </div>
 
     <script>

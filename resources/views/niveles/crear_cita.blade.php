@@ -24,27 +24,27 @@
 </head>
 <body>
     <div class="header">
-        <h1>📱 Nueva Cita</h1>
+        <h1> Nueva Cita</h1>
         <a href="/citas/agenda" class="btn btn-azul">← Volver a Agenda</a>
     </div>
     <div class="content">
         <div class="form-card">
             <h2> Agendar Nueva Cita</h2>
             <div class="info-box">
-                📱 El paciente recibirá confirmación por WhatsApp al número que registres
+                 El paciente recibirá confirmación por WhatsApp al número que registres
             </div>
             <div class="precios">
-                <strong>💰 Precios de referencia:</strong><br>
+                <strong> Precios de referencia:</strong><br>
                 Consulta General: $800 | Cardiología: $1,200 | Pediatría: $600 | Traumatología: $1,000
             </div>
             <form action="/citas/guardar" method="POST">
                 @csrf
                 <div class="form-group">
-                    <label>👤 Nombre del Paciente *</label>
+                    <label> Nombre del Paciente *</label>
                     <input type="text" name="paciente_nombre" required placeholder="Nombre completo">
                 </div>
                 <div class="form-group">
-                    <label>📞 Teléfono (WhatsApp) *</label>
+                    <label> Teléfono (WhatsApp) *</label>
                     <input type="text" name="telefono" required placeholder="Ej: 527201234567" value="{{ request('telefono', '') }}">
                 </div>
                 <div class="form-group">
@@ -52,7 +52,7 @@
                     <input type="date" name="fecha" required value="{{ request('fecha', date('Y-m-d')) }}">
                 </div>
                 <div class="form-group">
-                    <label>🕐 Horario *</label>
+                    <label> Horario *</label>
                     <select name="horario" required>
                         <option value="">Seleccionar horario</option>
                         @php

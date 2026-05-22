@@ -44,9 +44,9 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;height:100vh;dis
 </head>
 <body>
 <div class="header">
-<h1>💳 Mis Pacientes</h1>
+<h1> Mis Pacientes</h1>
 <div class="header-info">
-<a href="/expediente/crear" class="btn btn-green">➕ Nuevo Paciente</a><a href="/nivel-a/presupuestos/crear" class="btn btn-blue"> Nuevo Presupuesto</a>
+<a href="/expediente/crear" class="btn btn-green"> Nuevo Paciente</a><a href="/nivel-a/presupuestos/crear" class="btn btn-blue"> Nuevo Presupuesto</a>
 <span>{{ auth()->user()->name }}</span>
 <form action="/logout" method="POST" style="display:inline;">@csrf<button type="submit" class="btn btn-red">Salir</button></form>
 </div>
@@ -54,15 +54,15 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;height:100vh;dis
 <div class="main">
 <div class="sidebar">
 <div class="sidebar-title">Consultas</div>
-<a href="/nivel-a" class="nav-item"><span class="nav-icon">📊</span> Dashboard</a>
-<a href="/citas/agenda" class="nav-item"><span class="nav-icon">📱</span> Agenda</a>
-<a href="/expedientes" class="nav-item"><span class="nav-icon">📁</span> Expedientes</a>
-<a href="/expediente/crear" class="nav-item"><span class="nav-icon">➕</span> Nuevo Paciente</a>
-<a href="/receta/crear" class="nav-item"><span class="nav-icon">📝</span> Receta</a>
-<a href="/medicamentos" class="nav-item"><span class="nav-icon">🧪</span> Medicamentos</a>
+<a href="/nivel-a" class="nav-item"><span class="nav-icon"></span> Dashboard</a>
+<a href="/citas/agenda" class="nav-item"><span class="nav-icon"></span> Agenda</a>
+<a href="/expedientes" class="nav-item"><span class="nav-icon"></span> Expedientes</a>
+<a href="/expediente/crear" class="nav-item"><span class="nav-icon"></span> Nuevo Paciente</a>
+<a href="/receta/crear" class="nav-item"><span class="nav-icon"></span> Receta</a>
+<a href="/medicamentos" class="nav-item"><span class="nav-icon"></span> Medicamentos</a>
 <div class="sidebar-title">Pacientes</div>
-<a href="/expedientes" class="nav-item"><span class="nav-icon">📁</span> Expedientes</a>
-<a href="/nivel-a/pacientes" class="nav-item active"><span class="nav-icon">💳</span> Mis Pacientes</a>
+<a href="/expedientes" class="nav-item"><span class="nav-icon"></span> Expedientes</a>
+<a href="/nivel-a/pacientes" class="nav-item active"><span class="nav-icon"></span> Mis Pacientes</a>
 <a href="/nivel-a/presupuestos/crear" class="nav-item"><span class="nav-icon"></span> Nuevo Presupuesto</a>
 <a href="/nivel-a/servicios" class="nav-item"><span class="nav-icon"></span> Ver Servicios</a>
 </div>
@@ -88,7 +88,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;height:100vh;dis
 <div class="cama-id">Cuenta #{{ $p->id }}</div>
 <div class="cama-nombre">{{ $p->paciente_nombre }}</div>
 <div class="cama-estado {{ $p->saldo_pendiente > 0 ? ($p->estado == 'vencida' ? 'vencida' : 'pendiente') : 'pagada' }}">
-{{ $p->saldo_pendiente > 0 ? ($p->estado == 'vencida' ? '⚠ VENCIDA' : '⏳ Pendiente') : ' Pagada' }}
+{{ $p->saldo_pendiente > 0 ? ($p->estado == 'vencida' ? ' VENCIDA' : '⏳ Pendiente') : ' Pagada' }}
 </div>
 <div class="cama-saldo {{ $p->saldo_pendiente > 0 ? 'positivo' : 'cero' }}">${{ number_format($p->saldo_pendiente, 2) }}</div>
 </div>
